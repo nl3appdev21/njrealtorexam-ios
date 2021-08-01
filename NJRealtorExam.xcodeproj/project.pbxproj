@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE0CADDA26B6657B0044D010 /* njrealtorexam_12.json in Resources */ = {isa = PBXBuildFile; fileRef = CE0CADD926B6657B0044D010 /* njrealtorexam_12.json */; };
+		CE0CADDC26B6658E0044D010 /* njrealtorexam_21.json in Resources */ = {isa = PBXBuildFile; fileRef = CE0CADDB26B6658E0044D010 /* njrealtorexam_21.json */; };
+		CE0CADDE26B665A20044D010 /* njrealtorexam_32.json in Resources */ = {isa = PBXBuildFile; fileRef = CE0CADDD26B665A20044D010 /* njrealtorexam_32.json */; };
+		CE0CADE026B665BF0044D010 /* njrealtorexam_42.json in Resources */ = {isa = PBXBuildFile; fileRef = CE0CADDF26B665BF0044D010 /* njrealtorexam_42.json */; };
+		CE0CADE226B666BE0044D010 /* ExamItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0CADE126B666BE0044D010 /* ExamItem.swift */; };
+		CE0CADE426B66B290044D010 /* LoadJsonData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0CADE326B66B290044D010 /* LoadJsonData.swift */; };
+		CE0CADE626B700230044D010 /* njrealtorexam_12a.json in Resources */ = {isa = PBXBuildFile; fileRef = CE0CADE526B700230044D010 /* njrealtorexam_12a.json */; };
 		CE97D7AC26ADE0DA008688E2 /* NJRealtorExamApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE97D7AB26ADE0DA008688E2 /* NJRealtorExamApp.swift */; };
 		CE97D7AE26ADE0DA008688E2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE97D7AD26ADE0DA008688E2 /* ContentView.swift */; };
 		CE97D7B026ADE0DD008688E2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE97D7AF26ADE0DD008688E2 /* Assets.xcassets */; };
@@ -44,6 +51,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CE0CADD926B6657B0044D010 /* njrealtorexam_12.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = njrealtorexam_12.json; sourceTree = "<group>"; };
+		CE0CADDB26B6658E0044D010 /* njrealtorexam_21.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = njrealtorexam_21.json; sourceTree = "<group>"; };
+		CE0CADDD26B665A20044D010 /* njrealtorexam_32.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = njrealtorexam_32.json; sourceTree = "<group>"; };
+		CE0CADDF26B665BF0044D010 /* njrealtorexam_42.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = njrealtorexam_42.json; sourceTree = "<group>"; };
+		CE0CADE126B666BE0044D010 /* ExamItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamItem.swift; sourceTree = "<group>"; };
+		CE0CADE326B66B290044D010 /* LoadJsonData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadJsonData.swift; sourceTree = "<group>"; };
+		CE0CADE526B700230044D010 /* njrealtorexam_12a.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = njrealtorexam_12a.json; sourceTree = "<group>"; };
 		CE97D7A826ADE0DA008688E2 /* NJRealtorExam.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NJRealtorExam.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE97D7AB26ADE0DA008688E2 /* NJRealtorExamApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NJRealtorExamApp.swift; sourceTree = "<group>"; };
 		CE97D7AD26ADE0DA008688E2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -117,6 +131,11 @@
 		CE97D7AA26ADE0DA008688E2 /* NJRealtorExam */ = {
 			isa = PBXGroup;
 			children = (
+				CE0CADD926B6657B0044D010 /* njrealtorexam_12.json */,
+				CE0CADE526B700230044D010 /* njrealtorexam_12a.json */,
+				CE0CADDB26B6658E0044D010 /* njrealtorexam_21.json */,
+				CE0CADDD26B665A20044D010 /* njrealtorexam_32.json */,
+				CE0CADDF26B665BF0044D010 /* njrealtorexam_42.json */,
 				CE97D7AB26ADE0DA008688E2 /* NJRealtorExamApp.swift */,
 				CE97D7AD26ADE0DA008688E2 /* ContentView.swift */,
 				CE97D7AF26ADE0DD008688E2 /* Assets.xcassets */,
@@ -133,6 +152,8 @@
 				CE97D7E826AE0E9B008688E2 /* PassedTest.swift */,
 				CE97D7EA26AE0F29008688E2 /* FailedTest.swift */,
 				CE97D7EC26AE0F98008688E2 /* CertScreen.swift */,
+				CE0CADE126B666BE0044D010 /* ExamItem.swift */,
+				CE0CADE326B66B290044D010 /* LoadJsonData.swift */,
 			);
 			path = NJRealtorExam;
 			sourceTree = "<group>";
@@ -267,7 +288,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE97D7B326ADE0DD008688E2 /* Preview Assets.xcassets in Resources */,
+				CE0CADDA26B6657B0044D010 /* njrealtorexam_12.json in Resources */,
+				CE0CADE026B665BF0044D010 /* njrealtorexam_42.json in Resources */,
+				CE0CADDE26B665A20044D010 /* njrealtorexam_32.json in Resources */,
+				CE0CADE626B700230044D010 /* njrealtorexam_12a.json in Resources */,
 				CE97D7B026ADE0DD008688E2 /* Assets.xcassets in Resources */,
+				CE0CADDC26B6658E0044D010 /* njrealtorexam_21.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -302,7 +328,9 @@
 				CE97D7E526AE0D73008688E2 /* Settings.swift in Sources */,
 				CE97D7E926AE0E9C008688E2 /* PassedTest.swift in Sources */,
 				CE97D7EB26AE0F29008688E2 /* FailedTest.swift in Sources */,
+				CE0CADE226B666BE0044D010 /* ExamItem.swift in Sources */,
 				CE97D7E726AE0DE4008688E2 /* DevInfo.swift in Sources */,
+				CE0CADE426B66B290044D010 /* LoadJsonData.swift in Sources */,
 				CE97D7D726ADE2F4008688E2 /* SplashView.swift in Sources */,
 				CE97D7DB26AE0103008688E2 /* Menu.swift in Sources */,
 			);

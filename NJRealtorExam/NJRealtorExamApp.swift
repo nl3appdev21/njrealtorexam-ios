@@ -12,6 +12,7 @@ struct NJRealtorExamApp: App {
     var body: some Scene {
         WindowGroup {
             SplashView()
+            // ?? and json here ??
             // Flashcards()
             // put view here to start in !!
         }

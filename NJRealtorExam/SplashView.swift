@@ -21,15 +21,14 @@ struct SplashView: View {
     
     var body: some View {
         
-        // place background image here !!
-        // place background image here !!
-        
         VStack(alignment: .leading, spacing: 0){
             
             Text("this is the splash screen man can you dig it!!")
             Text("this is the splash screen man can you dig it!!")
             Text(" ")
-            Text("place background image here !!")
+            // place background image here !!
+            Image ("nl3a00")
+            // Text("place background image here !!")
             Text(" ")
             
             Button(action: {
@@ -45,5 +44,8 @@ struct SplashView: View {
             
             Text(" ")
         }
+        .onAppear(){
+            let data = LoadJsonData().examItem
+            print(data[1].answers[1])        }
     }
 }
