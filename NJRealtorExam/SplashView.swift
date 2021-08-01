@@ -26,8 +26,8 @@ struct SplashView: View {
         
         VStack(alignment: .leading, spacing: 0){
             
-            Text("this is the splash screen man !!")
-            Text("this is the splash screen man !!")
+            Text("this is the splash screen man can you dig it!!")
+            Text("this is the splash screen man can you dig it!!")
             Text(" ")
             Text("place background image here !!")
             Text(" ")
