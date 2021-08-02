@@ -9,6 +9,8 @@ import Foundation
 import SwiftUI
 import UIKit
 
+var jsonData: [ExamItem] = []
+
 struct SplashView: View {
     let greenBtn = Color(red: 76.0/255, green: 84.0/255, blue: 75.0/255)
     
@@ -45,7 +47,8 @@ struct SplashView: View {
             Text(" ")
         }
         .onAppear(){
-            let data = LoadJsonData().examItem
-            print(data[1].answers[1])        }
+            jsonData = LoadJsonData().examItem
+            // print(data[1].answers[1])
+        }
     }
 }

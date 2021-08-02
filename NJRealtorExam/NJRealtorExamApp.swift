@@ -11,9 +11,9 @@ import SwiftUI
 struct NJRealtorExamApp: App {
     var body: some Scene {
         WindowGroup {
-            SplashView()
+            // SplashView()
             // ?? and json here ??
-            // Flashcards()
+            Flashcards()
             // put view here to start in !!
         }
     }
