@@ -52,17 +52,6 @@ struct Flashcards: View {
             
             Group{
             
-            Button(action: {
-                gotoMenu()
-                print("goto menu screen")
-            }, label: {
-                Text("< BACK <")
-                    .padding(7)
-                    .font(.system(size: 16))
-                    .background(greenBtn)
-                    .foregroundColor(.white)
-            })
-            
             Text(jsonData[index].category)
                 .font(.system(size: 26))
                 .bold()
