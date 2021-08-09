@@ -12,6 +12,10 @@ import UIKit
 struct Flashcards: View {
     @State var index: Int = 0
     @State var flashcardcount = ""
+    @State var ans: Int = 0
+    @State var theans: String = " "
+    @State var showans: String = " "
+    
     let greenBtn = Color(red: 76.0/255, green: 84.0/255, blue: 75.0/255)
     let blueBtn = Color(red: 53.0/255, green: 180.0/255, blue: 230.0/255)
     let flashcardManager = FlashcardManager()
@@ -26,13 +30,6 @@ struct Flashcards: View {
             window.makeKeyAndVisible()
         }
     }
- 
-    func gotoTakeTest() {
-        if let window = UIApplication.shared.windows.first {
-            window.rootViewController = UIHostingController(rootView: TakeTest())
-            window.makeKeyAndVisible()
-        }
-    }
     
     func getPrev() {
         index = flashcardManager.prevCard()
@@ -44,15 +41,18 @@ struct Flashcards: View {
         flashcardcount = updateCardCount()
     }
     
+    func showAnswer() {
+        theans = "SHOW ANSWER"
+        showans = flashcardManager.getCorrectAnswers()
+        print("show me the answer now")
+    }
+    
     func updateCardCount() -> String {
         let count = String(index + 1) + " / " + String(flashcardManager.getCardCount()) + " Flashcards " + " details btn"
         return count
     }
 
     var body: some View {
-        
-        // place background image here !!
-        // place background image here !!
         
         VStack(alignment: .leading, spacing: 0){
             
@@ -91,13 +91,19 @@ struct Flashcards: View {
                 .background(Color.yellow)
             Text("")
                 
-                Text(flashcardManager.getCorrectAnswers()) // ?? change to btn
-                .font(.system(size: 26))
+            Button(action: {
+                showAnswer()
+            }, label: {
+                // Text("SHOW ANSWER")  //  ????
+                // Text(flashcardManager.getCorrectAnswers())  //  ????
+                Text((ans == 0) ? theans : showans)
+                .font(.system(size: 20))
                 .bold()
                 .padding(8)
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .background(Color.green)
                 .foregroundColor(.white)
+            })
             Text("")
             
             }
@@ -107,7 +113,7 @@ struct Flashcards: View {
             Button(action: {
                 gotoMenu()
             }, label: {
-                Text("goto menu")
+                Text("GOTO MENU")
                     .bold()
                     .padding(7)
                     .font(.system(size: 20))
