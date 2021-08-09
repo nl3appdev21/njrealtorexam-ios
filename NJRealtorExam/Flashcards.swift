@@ -10,15 +10,16 @@ import SwiftUI
 import UIKit
 
 struct Flashcards: View {
+    @State var index: Int = 0
+    @State var flashcardcount = ""
     let greenBtn = Color(red: 76.0/255, green: 84.0/255, blue: 75.0/255)
     let blueBtn = Color(red: 53.0/255, green: 180.0/255, blue: 230.0/255)
-    var index: Int = 0
-    var jsonData = LoadJsonData().examItem  //  loads the json file !!
-    var flashcardcount = ""
-
+    let flashcardManager = FlashcardManager()
+    
     init() {
-        flashcardcount = String(index) + " / " + String(jsonData.count) + " Flashcards " + " details btn"
+       _flashcardcount = State(initialValue:updateCardCount())
     }
+    
     func gotoMenu() {
         if let window = UIApplication.shared.windows.first {
             window.rootViewController = UIHostingController(rootView: Menu())
@@ -34,13 +35,18 @@ struct Flashcards: View {
     }
     
     func getPrev() {
-        
-        
+        index = flashcardManager.prevCard()
+        flashcardcount = updateCardCount()
     }
     
     func getNext() {
-        
-        
+        index = flashcardManager.nextCard()
+        flashcardcount = updateCardCount()
+    }
+    
+    func updateCardCount() -> String {
+        let count = String(index + 1) + " / " + String(flashcardManager.getCardCount()) + " Flashcards " + " details btn"
+        return count
     }
 
     var body: some View {
@@ -52,40 +58,44 @@ struct Flashcards: View {
             
             Group{
             
-            Text(jsonData[index].category)
-                .font(.system(size: 26))
+                Text(flashcardManager.getCategory())
+                .font(.system(size: 22))
                 .bold()
                 .padding(10)
-                .frame(maxWidth: .infinity, alignment: .center)   // << here !!
-                .background(Color.gray)
+                .frame(maxWidth: .infinity, alignment: .center)
+                .background(Color.white)
+                .foregroundColor(.black)
+                .border(Color.black, width: 5)
             
             GeometryReader { geo in
-                Image(jsonData[index].category)
+                Image(flashcardManager.getCategory())
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .frame(width: geo.size.width)
                 }
                 
             Text(flashcardcount)
-                .font(.system(size: 26))
+                .font(.system(size: 22))
                 .bold()
                 .padding(10)
-                .frame(maxWidth: .infinity, alignment: .center)   // << here !!
-                .background(Color.gray)
+                .frame(maxWidth: .infinity, alignment: .center)
+                .background(Color.black)
+                .foregroundColor(.white)
+                .border(Color.white, width: 5)
             Text("")
             
-            Text(jsonData[index].question)
+                Text(flashcardManager.getQuestion())
                 .padding(10)
                 .font(.system(size: 16))
-                .frame(maxWidth: .infinity, minHeight: 200, alignment: .topLeading)   // << here !!
+                .frame(maxWidth: .infinity, minHeight: 200, alignment: .topLeading)
                 .background(Color.yellow)
             Text("")
                 
-            Text("SHOW ANSWER")
+                Text(flashcardManager.getCorrectAnswers()) // ?? change to btn
                 .font(.system(size: 26))
                 .bold()
                 .padding(8)
-                .frame(maxWidth: .infinity, alignment: .leading)   // << here !!
+                .frame(maxWidth: .infinity, alignment: .leading)
                 .background(Color.green)
                 .foregroundColor(.white)
             Text("")
@@ -104,31 +114,31 @@ struct Flashcards: View {
                     .background(blueBtn)
                     .cornerRadius(10)
                     .foregroundColor(.white)
-            })
+            }).padding(.leading,10)
                 
-            Button(action: {
+            Button(action: {  //  add if to change btn apperance
                 getPrev()
-            }, label: {
-                Text("PREV")
-                    .bold()
-                    .padding(7)
-                    .font(.system(size: 20))
-                    .background(blueBtn)
-                    .cornerRadius(10)
-                    .foregroundColor(.white)
-            })
+                }, label: {
+            Text("PREV")
+                .bold()
+                .padding(7)
+                .font(.system(size: 20))
+                .background(flashcardManager.isFirstCard() ? Color.gray : blueBtn)
+                .cornerRadius(10)
+                .foregroundColor(.white)
+                }).disabled(index < 1 )
             
-            Button(action: {
+            Button(action: {  //  add if to change btn apperance
                 getNext()
             }, label: {
-                Text("NEXT")
-                    .bold()
-                    .padding(7)
-                    .font(.system(size: 20))
-                    .background(blueBtn)
-                    .cornerRadius(10)
-                    .foregroundColor(.white)
-            })
+            Text("NEXT")
+                .bold()
+                .padding(7)
+                .font(.system(size: 20))
+                .background(index == flashcardManager.getCardCount() - 1 ? Color.gray : blueBtn)
+                .cornerRadius(10)
+                .foregroundColor(.white)
+            }).disabled(index == flashcardManager.getCardCount() - 1)
                 
           }
         }.frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .topLeading)

@@ -31,6 +31,7 @@
 		CE97D7E926AE0E9C008688E2 /* PassedTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE97D7E826AE0E9B008688E2 /* PassedTest.swift */; };
 		CE97D7EB26AE0F29008688E2 /* FailedTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE97D7EA26AE0F29008688E2 /* FailedTest.swift */; };
 		CE97D7ED26AE0F98008688E2 /* CertScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE97D7EC26AE0F98008688E2 /* CertScreen.swift */; };
+		CEB4B31426C0B0ED00253176 /* FlashcardManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB4B31326C0B0ED00253176 /* FlashcardManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +82,7 @@
 		CE97D7E826AE0E9B008688E2 /* PassedTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassedTest.swift; sourceTree = "<group>"; };
 		CE97D7EA26AE0F29008688E2 /* FailedTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FailedTest.swift; sourceTree = "<group>"; };
 		CE97D7EC26AE0F98008688E2 /* CertScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CertScreen.swift; sourceTree = "<group>"; };
+		CEB4B31326C0B0ED00253176 /* FlashcardManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashcardManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +145,7 @@
 				CE97D7B126ADE0DD008688E2 /* Preview Content */,
 				CE97D7D626ADE2F4008688E2 /* SplashView.swift */,
 				CE97D7D826ADF453008688E2 /* Flashcards.swift */,
+				CEB4B31326C0B0ED00253176 /* FlashcardManager.swift */,
 				CE97D7DA26AE0103008688E2 /* Menu.swift */,
 				CE97D7DC26AE07D0008688E2 /* AppInstructions.swift */,
 				CE97D7E026AE0BAA008688E2 /* TakeTest.swift */,
@@ -322,6 +325,7 @@
 				CE97D7E326AE0CDA008688E2 /* Leaderboard.swift in Sources */,
 				CE97D7E126AE0BAA008688E2 /* TakeTest.swift in Sources */,
 				CE97D7AC26ADE0DA008688E2 /* NJRealtorExamApp.swift in Sources */,
+				CEB4B31426C0B0ED00253176 /* FlashcardManager.swift in Sources */,
 				CE97D7ED26AE0F98008688E2 /* CertScreen.swift in Sources */,
 				CE97D7DD26AE07D0008688E2 /* AppInstructions.swift in Sources */,
 				CE97D7D926ADF453008688E2 /* Flashcards.swift in Sources */,
