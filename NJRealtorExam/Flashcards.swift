@@ -170,7 +170,7 @@ struct Flashcards: View {
                     .foregroundColor(.white)
             }).padding(.leading,10)
                 
-            Button(action: {  //  add if to change btn apperance
+            Button(action: {  //  add if to change button apperance
                 getPrev()
                 }, label: {
             Text("PREV")
@@ -182,7 +182,7 @@ struct Flashcards: View {
                 .foregroundColor(.white)
                 }).disabled(index < 1 )
             
-            Button(action: {  //  add if to change btn apperance
+            Button(action: {  //  add if to change button apperance
                 getNext()
             }, label: {
             Text("NEXT")
