@@ -13,9 +13,11 @@ struct Flashcards: View {
     @State var index: Int = 0
     @State var flashcardcount = ""
     @State var ans: Int = 0
-    @State var theans: String = " "
-    @State var showans: String = " "
+    @State var details: Int = 0
+    @State var ansdetails: String = " "
+    @State var ansbtn: String = " "
     
+    let thegold = Image("goldwinner")  //  ????????
     let greenBtn = Color(red: 76.0/255, green: 84.0/255, blue: 75.0/255)
     let blueBtn = Color(red: 53.0/255, green: 180.0/255, blue: 230.0/255)
     let flashcardManager = FlashcardManager()
@@ -34,21 +36,40 @@ struct Flashcards: View {
     func getPrev() {
         index = flashcardManager.prevCard()
         flashcardcount = updateCardCount()
+        ans = 0
+        details = 0
     }
     
     func getNext() {
         index = flashcardManager.nextCard()
         flashcardcount = updateCardCount()
+        ans = 0
+        details = 0
     }
     
     func showAnswer() {
-        theans = "SHOW ANSWER"
-        showans = flashcardManager.getCorrectAnswers()
-        print("show me the answer now")
+        if ans == 0 {
+            ansbtn = "SHOW ANSWER"
+            ans = 1
+        }
+        
+        if ans == 1 {
+            ansbtn = flashcardManager.getCorrectAnswers()
+            ans = 1
+        }
+    }
+    
+    func showDetails() {
+        if details == 1 {
+            ansdetails  = flashcardManager.getAnswerDetails()
+            //  details = 0 or 1
+        }
     }
     
     func updateCardCount() -> String {
-        let count = String(index + 1) + " / " + String(flashcardManager.getCardCount()) + " Flashcards " + " details btn"
+        let count = String(index + 1) + " / " + String(flashcardManager.getCardCount()) + " Flashcards "
+        //  ????????  + " ? details btn ?"
+        //  ????????  Image("goldwinner")
         return count
     }
 
@@ -56,58 +77,85 @@ struct Flashcards: View {
         
         VStack(alignment: .leading, spacing: 0){
             
-            Group{
-            
-                Text(flashcardManager.getCategory())
-                .font(.system(size: 22))
-                .bold()
-                .padding(10)
-                .frame(maxWidth: .infinity, alignment: .center)
-                .background(Color.white)
-                .foregroundColor(.black)
-                .border(Color.black, width: 5)
-            
+            Text(" ")
+            Text(flashcardManager.getCategory())
+            .font(.system(size: 22))
+            .bold()
+            .padding(10)
+            .frame(maxWidth: .infinity, alignment: .center)
+            .background(Color.white)
+            .foregroundColor(.black)
+            .border(Color.black, width: 5)
+
             GeometryReader { geo in
                 Image(flashcardManager.getCategory())
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: geo.size.width)
-                }
-                
-            Text(flashcardcount)
-                .font(.system(size: 22))
-                .bold()
-                .padding(10)
-                .frame(maxWidth: .infinity, alignment: .center)
-                .background(Color.black)
-                .foregroundColor(.white)
-                .border(Color.white, width: 5)
-            Text("")
-            
-                Text(flashcardManager.getQuestion())
-                .padding(10)
-                .font(.system(size: 16))
-                .frame(maxWidth: .infinity, minHeight: 200, alignment: .topLeading)
-                .background(Color.yellow)
-            Text("")
-                
-            Button(action: {
-                showAnswer()
-            }, label: {
-                // Text("SHOW ANSWER")  //  ????
-                // Text(flashcardManager.getCorrectAnswers())  //  ????
-                Text((ans == 0) ? theans : showans)
-                .font(.system(size: 20))
-                .bold()
-                .padding(8)
-                .frame(maxWidth: .infinity, alignment: .leading)
-                .background(Color.green)
-                .foregroundColor(.white)
-            })
-            Text("")
-            
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .padding(21)
+                    .frame(width: geo.size.width)
             }
             
+            Group{
+            
+                Text(flashcardcount)
+                    .font(.system(size: 22))
+                    .bold()
+                    .padding(10)
+                    .frame(maxWidth: .infinity, alignment: .center)
+                    .background(Color.black)
+                    .foregroundColor(.white)
+                    .border(Color.white, width: 5)
+                Text("")
+                
+                if details == 1 {
+                    Text(" Answer Details:   " + flashcardManager.getAnswerDetails())  //  ???????
+                        .padding(10)
+                        .font(.system(size: 16))
+                        .frame(maxWidth: .infinity, minHeight: 300, alignment: .topLeading)
+                        .background(blueBtn)
+                } else {
+                    Text(flashcardManager.getQuestion())
+                        .padding(10)
+                        .font(.system(size: 16))
+                        .frame(maxWidth: .infinity, minHeight: 300, alignment: .topLeading)
+                        .background(Color.yellow)
+                }
+                Text("")
+            }
+
+            if ans == 0 {
+                Button(action: {
+                    showAnswer()
+                }, label: {
+                    Text("SHOW ANSWER")
+                    .font(.system(size: 20))
+                    .bold()
+                    .padding(8)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .background(Color.green)
+                    .foregroundColor(.white)
+                })
+                Text("")
+                
+            } else {
+                
+            if ans == 1 {
+                Button(action: {
+                    showAnswer()
+                }, label: {
+                    Text(flashcardManager.getCorrectAnswers())
+                    .font(.system(size: 20))
+                    .bold()
+                    .padding(8)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .background(Color.orange)
+                    .foregroundColor(.white)
+                })
+                Text("")
+            
+                }
+            }
+                
             HStack {
             
             Button(action: {
@@ -116,7 +164,7 @@ struct Flashcards: View {
                 Text("GOTO MENU")
                     .bold()
                     .padding(7)
-                    .font(.system(size: 20))
+                    .font(.system(size: 19))
                     .background(blueBtn)
                     .cornerRadius(10)
                     .foregroundColor(.white)
@@ -128,7 +176,7 @@ struct Flashcards: View {
             Text("PREV")
                 .bold()
                 .padding(7)
-                .font(.system(size: 20))
+                .font(.system(size: 19))
                 .background(flashcardManager.isFirstCard() ? Color.gray : blueBtn)
                 .cornerRadius(10)
                 .foregroundColor(.white)
@@ -140,13 +188,31 @@ struct Flashcards: View {
             Text("NEXT")
                 .bold()
                 .padding(7)
-                .font(.system(size: 20))
+                .font(.system(size: 19))
                 .background(index == flashcardManager.getCardCount() - 1 ? Color.gray : blueBtn)
                 .cornerRadius(10)
                 .foregroundColor(.white)
             }).disabled(index == flashcardManager.getCardCount() - 1)
+              
+            //  added new details btn  ????????
+            Button(action: {  //  add if to change btn apperance
+                details = 1
+            }, label: {
+            Text("DETAILS")
+                .bold()
+                .padding(7)
+                .font(.system(size: 13))
+                .background(index == flashcardManager.getCardCount() ? Color.gray : blueBtn)
+                .cornerRadius(10)
+                .foregroundColor(.white)
+            })
                 
           }
+            
+          Text("")
+            
         }.frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .topLeading)
+         .background(Color.gray)
+        
     }
 }

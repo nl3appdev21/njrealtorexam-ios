@@ -57,4 +57,3 @@ public class FlashcardManager {
         return currentItem!.details
     }
 }
-
