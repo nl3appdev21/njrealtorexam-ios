@@ -79,14 +79,13 @@ struct TakeTest: View {
         VStack(alignment: .leading, spacing: 0){
             
             Text((flashcardcount) + (" -- 0 Correct"))
-                .font(.system(size: 13))
+                .font(.system(size: 17))
                 .bold()
                 .padding(10)
                 .frame(maxWidth: .infinity, alignment: .center)
                 .background(Color.black)
                 .foregroundColor(.white)
                 .border(Color.white, width: 5)
-            Text("")
             
             Text(" ")
             Text(flashcardManager.getCategory())
@@ -108,53 +107,69 @@ struct TakeTest: View {
             
             Group{
                 
-                if details == 1 {
-                    Text(" Answer Details:   " + flashcardManager.getAnswerDetails())  //  ???????
-                        .padding(10)
-                        .font(.system(size: 16))
-                        .frame(maxWidth: .infinity, minHeight: 300, alignment: .topLeading)
+                Text(flashcardManager.getQuestion())
+                    .padding(10)
+                    .font(.system(size: 16))
+                    .frame(maxWidth: .infinity, minHeight: 200, alignment: .topLeading)
+                    .background(Color.gray)
+        
+                Text("")
+                    
+                Button(action: {
+                    gotoMenu()
+                }, label: {
+                    Text(flashcardManager.getCorrectAnswers())  // ans 00
+                        .bold()
+                        .padding(7)
+                        .font(.system(size: 17))
+                        .frame(maxWidth: .infinity, alignment: .topLeading)
                         .background(blueBtn)
-                } else {
-                    Text(flashcardManager.getQuestion())
-                        .padding(10)
-                        .font(.system(size: 16))
-                        .frame(maxWidth: .infinity, minHeight: 300, alignment: .topLeading)
-                        .background(Color.yellow)
-                }
-                Text("")
-            }
-
-            if ans == 0 {
-                Button(action: {
-                    showAnswer()
-                }, label: {
-                    Text("SHOW ANSWER")
-                    .font(.system(size: 20))
-                    .bold()
-                    .padding(8)
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    .background(Color.green)
-                    .foregroundColor(.white)
-                })
+                        .foregroundColor(.white)
+                    }) // .padding(.leading,10) // ?? use to add padding to sides of textbox or buttons
                 Text("")
                 
-            } else {
-                
-            if ans == 1 {
                 Button(action: {
-                    showAnswer()
+                    gotoMenu()
                 }, label: {
-                    Text(flashcardManager.getCorrectAnswers())
-                    .font(.system(size: 20))
-                    .bold()
-                    .padding(8)
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    .background(Color.orange)
-                    .foregroundColor(.white)
-                })
+                    Text(flashcardManager.getCorrectAnswers())  // ans 01
+                        .bold()
+                        .padding(7)
+                        .font(.system(size: 17))
+                        .frame(maxWidth: .infinity, alignment: .topLeading)
+                        .background(blueBtn)
+                        .foregroundColor(.white)
+                }) // .padding(.leading,10) // ?? use to add padding to sides of textbox or buttons
+        
                 Text("")
-            
-                }
+                
+                Button(action: {
+                    gotoMenu()
+                }, label: {
+                    Text(flashcardManager.getCorrectAnswers())  // ans 02
+                        .bold()
+                        .padding(7)
+                        .font(.system(size: 17))
+                        .frame(maxWidth: .infinity, alignment: .topLeading)
+                        .background(blueBtn)
+                        .foregroundColor(.white)
+                }) // .padding(.leading,10) // ?? use to add padding to sides of textbox or buttons
+        
+                Text("")
+                
+                Button(action: {
+                    gotoMenu()
+                }, label: {
+                    Text(flashcardManager.getCorrectAnswers())  // ans 03
+                        .bold()
+                        .padding(7)
+                        .font(.system(size: 17))
+                        .frame(maxWidth: .infinity, alignment: .topLeading)
+                        .background(blueBtn)
+                        .foregroundColor(.white)
+                }) // .padding(.leading,10) // ?? use to add padding to sides of textbox or buttons
+        
+                Text("")
+                
             }
                 
             HStack {
@@ -195,25 +210,12 @@ struct TakeTest: View {
                 .foregroundColor(.white)
             }).disabled(index == flashcardManager.getCardCount() - 1)
               
-            //  added new details btn  ????????
-            Button(action: {  //  add if to change btn apperance
-                details = 1
-            }, label: {
-            Text("DETAILS")
-                .bold()
-                .padding(7)
-                .font(.system(size: 13))
-                .background(index == flashcardManager.getCardCount() ? Color.gray : blueBtn)
-                .cornerRadius(10)
-                .foregroundColor(.white)
-            })
-                
           }
             
           Text("")
             
         }.frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .topLeading)
-         .background(Color.gray)
+         .background(Color.black)
         
     }
 }
