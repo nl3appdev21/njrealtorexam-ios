@@ -3,9 +3,7 @@
 //  NJRealtorExam
 //
 //  Created by user on 7/25/21.
-
 //
-
 
 import Foundation
 import SwiftUI
@@ -129,8 +127,6 @@ struct TakeTest: View {
                     }) // .padding(.leading,10) // ?? use to add padding to sides of textbox or buttons
                 Text("")
                 
-                
-                
                 Button(action: {
                     gotoMenu()
                 }, label: {
@@ -144,8 +140,6 @@ struct TakeTest: View {
                 }) // .padding(.leading,10) // ?? use to add padding to sides of textbox or buttons
         
                 Text("")
-                
-                
                 
                 Button(action: {
                     gotoMenu()
@@ -161,8 +155,6 @@ struct TakeTest: View {
         
                 Text("")
                 
-                
-                
                 Button(action: {
                     gotoMenu()
                 }, label: {
@@ -176,8 +168,6 @@ struct TakeTest: View {
                 }) // .padding(.leading,10) // ?? use to add padding to sides of textbox or buttons
         
                 Text("")
-                
-                
                 
             }
                 
@@ -202,10 +192,10 @@ struct TakeTest: View {
                 .bold()
                 .padding(7)
                 .font(.system(size: 19))
-                .background(flashcardManager.isFirstCard() ? Color.gray : blueBtn)
+                .background(blueBtn)
                 .cornerRadius(10)
                 .foregroundColor(.white)
-                }).disabled(index < 1 )
+                }) // .disabled(index < 1 )
             
             Button(action: {  //  add if to change button apperance
                 getNext()
