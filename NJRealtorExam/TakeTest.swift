@@ -128,6 +128,8 @@ struct TakeTest: View {
                     }) // .padding(.leading,10) // ?? use to add padding to sides of textbox or buttons
                 Text("")
                 
+                
+                
                 Button(action: {
                     gotoMenu()
                 }, label: {
@@ -141,6 +143,8 @@ struct TakeTest: View {
                 }) // .padding(.leading,10) // ?? use to add padding to sides of textbox or buttons
         
                 Text("")
+                
+                
                 
                 Button(action: {
                     gotoMenu()
@@ -156,6 +160,8 @@ struct TakeTest: View {
         
                 Text("")
                 
+                
+                
                 Button(action: {
                     gotoMenu()
                 }, label: {
@@ -169,6 +175,8 @@ struct TakeTest: View {
                 }) // .padding(.leading,10) // ?? use to add padding to sides of textbox or buttons
         
                 Text("")
+                
+                
                 
             }
                 
