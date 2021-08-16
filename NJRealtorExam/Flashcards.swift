@@ -119,6 +119,7 @@ struct Flashcards: View {
                     .cornerRadius(13)
                     .foregroundColor(.white)
                 }).padding(.trailing,10)
+                
             }.padding(3)
              .frame(maxWidth: .infinity, alignment: .center)
              .background(Color.black)

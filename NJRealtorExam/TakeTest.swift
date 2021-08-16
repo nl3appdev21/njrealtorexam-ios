@@ -74,7 +74,8 @@ struct TakeTest: View {
         
         VStack(alignment: .leading, spacing: 0){
             
-            Text((flashcardcount) + (" -- 0 Correct"))
+            // num correct is how many right answers
+            Text((flashcardcount) + (" -- 0 Correct ???? "))
                 .font(.system(size: 17))
                 .bold()
                 .padding(10)
