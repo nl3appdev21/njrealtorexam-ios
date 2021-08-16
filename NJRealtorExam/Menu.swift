@@ -86,7 +86,6 @@ struct Menu: View {
                 .resizable()
                 .scaledToFit()
                 .frame(maxWidth: .infinity, alignment: .center)
-            Text(" ")
             
             Button(action: {
                 gotoFlashcards()
@@ -98,8 +97,8 @@ struct Menu: View {
                     .frame(maxWidth: .infinity, alignment: .center)
                     .background(blueBtn)
                     .foregroundColor(.white)
-            })
-            Text(" ")
+                    .cornerRadius(10)
+            }).padding(8)
             
             Button(action: {
                 gotoAppInstructions()
@@ -111,8 +110,8 @@ struct Menu: View {
                     .frame(maxWidth: .infinity, alignment: .center)
                     .background(blueBtn)
                     .foregroundColor(.white)
-            })
-            Text(" ")
+                    .cornerRadius(10)
+            }).padding(8)
             
             Button(action: {
                 gotoTakeTest()
@@ -124,8 +123,8 @@ struct Menu: View {
                     .frame(maxWidth: .infinity, alignment: .center)
                     .background(blueBtn)
                     .foregroundColor(.white)
-            })
-            // Text(" ") // ????
+                    .cornerRadius(10)
+            }).padding(8)
         
         }.background(Color.gray)
     
@@ -141,8 +140,8 @@ struct Menu: View {
                     .frame(maxWidth: .infinity, alignment: .center)
                     .background(blueBtn)
                     .foregroundColor(.white)
-            })
-            Text(" ")
+                    .cornerRadius(10)
+            }).padding(8)
             
             Button(action: {
                 gotoSettings()
@@ -154,9 +153,8 @@ struct Menu: View {
                     .frame(maxWidth: .infinity, alignment: .center)
                     .background(blueBtn)
                     .foregroundColor(.white)
-                
-            })
-            Text(" ")
+                    .cornerRadius(10)
+            }).padding(8)
             
             // new hstack
             HStack {
@@ -183,11 +181,13 @@ struct Menu: View {
              .frame(maxWidth: .infinity, alignment: .center)
              .background(blueBtn)
              .foregroundColor(.white)
-             // .border(Color.white, width: 3)
             
             Text("")
             // new hstack
             
         }.background(Color.gray)
+        
+        // }.frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .topLeading)
+        //  .background(Color.gray)
     }
 }
