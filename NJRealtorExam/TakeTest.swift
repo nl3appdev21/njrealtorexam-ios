@@ -26,18 +26,15 @@ struct TakeTest: View {
        _flashcardcount = State(initialValue:updateCardCount())
     }
     
+    func showrightans() {
+        print("show right or wrong ans")
+    }
+    
     func gotoMenu() {
         if let window = UIApplication.shared.windows.first {
             window.rootViewController = UIHostingController(rootView: Menu())
             window.makeKeyAndVisible()
         }
-    }
-    
-    func getPrev() {
-        index = flashcardManager.prevCard()
-        flashcardcount = updateCardCount()
-        ans = 0
-        details = 0
     }
     
     func getNext() {
@@ -67,7 +64,7 @@ struct TakeTest: View {
     }
     
     func updateCardCount() -> String {
-        let count = String(index + 1) + " / " + String(flashcardManager.getCardCount()) + " Flashcards "
+        let count = String(index + 1) + " / " + String(flashcardManager.getCardCount()) + " Questions "
         //  ????????  + " ? details btn ?"
         //  ????????  Image("goldwinner")
         return count
@@ -87,6 +84,7 @@ struct TakeTest: View {
                 .border(Color.white, width: 5)
             
             Text(" ")
+            
             Text(flashcardManager.getCategory())
             .font(.system(size: 22))
             .bold()
@@ -108,19 +106,19 @@ struct TakeTest: View {
                 
                 Text(flashcardManager.getQuestion())
                     .padding(10)
-                    .font(.system(size: 16))
+                    .font(.system(size: 17))
                     .frame(maxWidth: .infinity, minHeight: 200, alignment: .topLeading)
                     .background(Color.gray)
         
                 Text("")
                     
                 Button(action: {
-                    gotoMenu()
+                    showrightans()
                 }, label: {
-                    Text(flashcardManager.getCorrectAnswers())  // ans 00
+                    Text(flashcardManager.getanswers()[0])  // ans 00
                         .bold()
-                        .padding(7)
-                        .font(.system(size: 17))
+                        .padding(13)
+                        .font(.system(size: 13))
                         .frame(maxWidth: .infinity, alignment: .topLeading)
                         .background(blueBtn)
                         .foregroundColor(.white)
@@ -128,12 +126,12 @@ struct TakeTest: View {
                 Text("")
                 
                 Button(action: {
-                    gotoMenu()
+                    showrightans()
                 }, label: {
-                    Text(flashcardManager.getCorrectAnswers())  // ans 01
+                    Text(flashcardManager.getanswers()[1])  // ans 01
                         .bold()
-                        .padding(7)
-                        .font(.system(size: 17))
+                        .padding(13)
+                        .font(.system(size: 13))
                         .frame(maxWidth: .infinity, alignment: .topLeading)
                         .background(blueBtn)
                         .foregroundColor(.white)
@@ -142,12 +140,12 @@ struct TakeTest: View {
                 Text("")
                 
                 Button(action: {
-                    gotoMenu()
+                    showrightans()
                 }, label: {
-                    Text(flashcardManager.getCorrectAnswers())  // ans 02
+                    Text(flashcardManager.getanswers()[2])  // ans 02
                         .bold()
-                        .padding(7)
-                        .font(.system(size: 17))
+                        .padding(13)
+                        .font(.system(size: 13))
                         .frame(maxWidth: .infinity, alignment: .topLeading)
                         .background(blueBtn)
                         .foregroundColor(.white)
@@ -156,12 +154,12 @@ struct TakeTest: View {
                 Text("")
                 
                 Button(action: {
-                    gotoMenu()
+                    showrightans()
                 }, label: {
-                    Text(flashcardManager.getCorrectAnswers())  // ans 03
+                    Text(flashcardManager.getanswers()[3])  // ans 03
                         .bold()
-                        .padding(7)
-                        .font(.system(size: 17))
+                        .padding(13)
+                        .font(.system(size: 13))
                         .frame(maxWidth: .infinity, alignment: .topLeading)
                         .background(blueBtn)
                         .foregroundColor(.white)
@@ -178,31 +176,19 @@ struct TakeTest: View {
             }, label: {
                 Text("GOTO MENU")
                     .bold()
-                    .padding(7)
+                    .padding(13)
                     .font(.system(size: 19))
                     .background(blueBtn)
                     .cornerRadius(10)
                     .foregroundColor(.white)
             }).padding(.leading,10)
-                
-            Button(action: {  //  add if to change button apperance
-                getPrev()
-                }, label: {
-            Text("PREV")
-                .bold()
-                .padding(7)
-                .font(.system(size: 19))
-                .background(blueBtn)
-                .cornerRadius(10)
-                .foregroundColor(.white)
-                }) // .disabled(index < 1 )
             
             Button(action: {  //  add if to change button apperance
                 getNext()
             }, label: {
-            Text("NEXT")
+            Text("NEXT QUESTION")
                 .bold()
-                .padding(7)
+                .padding(13)
                 .font(.system(size: 19))
                 .background(index == flashcardManager.getCardCount() - 1 ? Color.gray : blueBtn)
                 .cornerRadius(10)
@@ -218,105 +204,3 @@ struct TakeTest: View {
         
     }
 }
-
-
-// take test code
-// take test code
-
-/*
-
-import Foundation
-import SwiftUI
-import UIKit
-
-struct TakeTest: View {
-    let greenBtn = Color(red: 76.0/255, green: 84.0/255, blue: 75.0/255)
-
-    func gotoMenu() {
-        if let window = UIApplication.shared.windows.first {
-            window.rootViewController = UIHostingController(rootView: Menu())
-            window.makeKeyAndVisible()
-        }
-    }
-
-    func passedtest() {
-        if let window = UIApplication.shared.windows.first {
-            window.rootViewController = UIHostingController(rootView: PassedTest())
-            window.makeKeyAndVisible()
-        }
-    }
-    
-    func failedtest() {
-        if let window = UIApplication.shared.windows.first {
-            window.rootViewController = UIHostingController(rootView: FailedTest())
-            window.makeKeyAndVisible()
-        }
-    }
-
-    var body: some View {
-        
-        // place background image here !!
-        // place background image here !!
-        
-        VStack(alignment: .leading, spacing: 0){
-            
-            Button(action: {
-                gotoMenu()
-                print("goto menu screen")
-            }, label: {
-                Text("< BACK <")
-                    .padding(7)
-                    .font(.system(size: 16))
-                    .background(greenBtn)
-                    .foregroundColor(.white)
-            })
-            
-            Text(" ")
-            
-            Text("this is the taketest screen man !!")
-            Text("this is the taketest screen man !!")
-            Text(" ")
-            Text("place background image here !!")
-            Text(" ")
-            
-            Button(action: {
-                gotoMenu()
-                print("goto menu screen")
-            }, label: {
-                Text("goto menu")
-                    .padding(7)
-                    .font(.system(size: 16))
-                    .background(greenBtn)
-                    .foregroundColor(.white)
-            })
-            
-            Button(action: {
-                passedtest()
-                print("goto passedtest screen")
-            }, label: {
-                Text("goto passedtest")
-                    .padding(7)
-                    .font(.system(size: 16))
-                    .background(greenBtn)
-                    .foregroundColor(.white)
-            })
-            
-            Button(action: {
-                failedtest()
-                print("goto failedtest screen")
-            }, label: {
-                Text("goto failedtest")
-                    .padding(7)
-                    .font(.system(size: 16))
-                    .background(greenBtn)
-                    .foregroundColor(.white)
-            })
-            
-        }
-    }
-}
-
-*/
-
-// take test code
-// take test code
