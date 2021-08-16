@@ -11,10 +11,15 @@ import SwiftUI
 struct NJRealtorExamApp: App {
     var body: some Scene {
         WindowGroup {
-            // SplashView()
-            // Flashcards()
-            TakeTest()
+             
             // put view here to start in !!
+            // put view here to start in !!
+            
+            // SplashView()
+            Menu()
+            // Flashcards()
+            // TakeTest()
+            
         }
     }
 }

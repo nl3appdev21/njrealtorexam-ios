@@ -74,15 +74,15 @@ struct Menu: View {
         VStack(alignment: .leading, spacing: 0){
             
             Text(" ")
-            Text("just hanging out at menu screen !!")
+            Text("NJ Realtor Exam")
                 .bold()
-                .font(.system(size: 20))
+                .font(.system(size: 26))
                 .frame(maxWidth: .infinity, alignment: .center)
-                .foregroundColor(.black)
+                .foregroundColor(.white)
             Text(" ")
             
-            Image("dex01")
-            //  Image("cubeshome")  //  ????
+            //  Image("dex01")
+            Image("cubeshome")
                 .resizable()
                 .scaledToFit()
                 .frame(maxWidth: .infinity, alignment: .center)
@@ -158,18 +158,35 @@ struct Menu: View {
             })
             Text(" ")
             
-            Button(action: {
-                gotoDevInfo()
-            }, label: {
-                Text(" dev info logo banner ")
-                    .font(.system(size: 20))
+            // new hstack
+            HStack {
+                
+                Text("Solutions to your development needs.")
+                    .font(.system(size: 13))
                     .bold()
-                    .padding(8)
+                    .padding(10)
                     .frame(maxWidth: .infinity, alignment: .center)
                     .background(blueBtn)
                     .foregroundColor(.white)
-            })
-            Text(" ")
+                Text("")
+                
+                Button(action: {
+                    gotoDevInfo()
+                }, label: {
+                    Image("nl3a00")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(maxWidth: 47, maxHeight: 37)
+                }).padding(.trailing,10)
+                
+            }.padding(3)
+             .frame(maxWidth: .infinity, alignment: .center)
+             .background(blueBtn)
+             .foregroundColor(.white)
+             // .border(Color.white, width: 3)
+            
+            Text("")
+            // new hstack
             
         }.background(Color.gray)
     }
