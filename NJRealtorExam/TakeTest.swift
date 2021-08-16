@@ -176,8 +176,8 @@ struct TakeTest: View {
             }, label: {
                 Text("GOTO MENU")
                     .bold()
-                    .padding(13)
-                    .font(.system(size: 19))
+                    .padding(12)
+                    .font(.system(size: 17))
                     .background(blueBtn)
                     .cornerRadius(10)
                     .foregroundColor(.white)
@@ -188,8 +188,8 @@ struct TakeTest: View {
             }, label: {
             Text("NEXT QUESTION")
                 .bold()
-                .padding(13)
-                .font(.system(size: 19))
+                .padding(12)
+                .font(.system(size: 17))
                 .background(index == flashcardManager.getCardCount() - 1 ? Color.gray : blueBtn)
                 .cornerRadius(10)
                 .foregroundColor(.white)

@@ -11,6 +11,7 @@ import UIKit
 
 struct Menu: View {
     let greenBtn = Color(red: 76.0/255, green: 84.0/255, blue: 75.0/255)
+    let blueBtn = Color(red: 53.0/255, green: 180.0/255, blue: 230.0/255)
 
     func gotoSplash() {
         if let window = UIApplication.shared.windows.first {
@@ -70,83 +71,106 @@ struct Menu: View {
 
     var body: some View {
         
-        // place background image here !!
-        // place background image here !!
-        
         VStack(alignment: .leading, spacing: 0){
             
-            Text("this is the menu screen man !!")
-            // Text("this is the menu screen man !!")
             Text(" ")
-            Text("place background image here !!")
+            Text("just hanging out at menu screen !!")
+                .bold()
+                .font(.system(size: 20))
+                .frame(maxWidth: .infinity, alignment: .center)
+                .foregroundColor(.black)
+            Text(" ")
+            
+            Image("dex01")
+            //  Image("cubeshome")  //  ????
+                .resizable()
+                .scaledToFit()
+                .frame(maxWidth: .infinity, alignment: .center)
             Text(" ")
             
             Button(action: {
                 gotoFlashcards()
-                print("goto flashcards screen")
             }, label: {
-                Text("goto flashcards")
-                    .padding(7)
-                    .font(.system(size: 16))
-                    .background(greenBtn)
+                Text("FLASHCARDS")
+                    .font(.system(size: 20))
+                    .bold()
+                    .padding(8)
+                    .frame(maxWidth: .infinity, alignment: .center)
+                    .background(blueBtn)
                     .foregroundColor(.white)
             })
+            Text(" ")
             
             Button(action: {
                 gotoAppInstructions()
-                print("goto appinstructions screen")
             }, label: {
-                Text("goto appinstructions")
-                    .padding(7)
-                    .font(.system(size: 16))
-                    .background(greenBtn)
+                Text("APP INSTRUCTIONS")
+                    .font(.system(size: 20))
+                    .bold()
+                    .padding(8)
+                    .frame(maxWidth: .infinity, alignment: .center)
+                    .background(blueBtn)
                     .foregroundColor(.white)
             })
+            Text(" ")
             
             Button(action: {
                 gotoTakeTest()
-                print("goto taketestscreen")
             }, label: {
-                Text("goto taketest")
-                    .padding(7)
-                    .font(.system(size: 16))
-                    .background(greenBtn)
+                Text("TAKE TEST")
+                    .font(.system(size: 20))
+                    .bold()
+                    .padding(8)
+                    .frame(maxWidth: .infinity, alignment: .center)
+                    .background(blueBtn)
                     .foregroundColor(.white)
             })
+            // Text(" ") // ????
+        
+        }.background(Color.gray)
+    
+        VStack(alignment: .leading, spacing: 0){
             
             Button(action: {
                 gotoLeaderboard()
-                print("goto leaderboard screen")
             }, label: {
-                Text("goto leaderboard")
-                    .padding(7)
-                    .font(.system(size: 16))
-                    .background(greenBtn)
+                Text("LEADERBOARD")
+                    .font(.system(size: 20))
+                    .bold()
+                    .padding(8)
+                    .frame(maxWidth: .infinity, alignment: .center)
+                    .background(blueBtn)
                     .foregroundColor(.white)
             })
+            Text(" ")
             
             Button(action: {
                 gotoSettings()
-                print("goto settings screen")
             }, label: {
-                Text("goto settings")
-                    .padding(7)
-                    .font(.system(size: 16))
-                    .background(greenBtn)
+                Text("SETTINGS")
+                    .font(.system(size: 20))
+                    .bold()
+                    .padding(8)
+                    .frame(maxWidth: .infinity, alignment: .center)
+                    .background(blueBtn)
                     .foregroundColor(.white)
+                
             })
+            Text(" ")
             
             Button(action: {
                 gotoDevInfo()
-                print("goto devinfo screen")
             }, label: {
-                Text("goto devinfo")
-                    .padding(7)
-                    .font(.system(size: 16))
-                    .background(greenBtn)
+                Text(" dev info logo banner ")
+                    .font(.system(size: 20))
+                    .bold()
+                    .padding(8)
+                    .frame(maxWidth: .infinity, alignment: .center)
+                    .background(blueBtn)
                     .foregroundColor(.white)
             })
+            Text(" ")
             
-        }
+        }.background(Color.gray)
     }
 }

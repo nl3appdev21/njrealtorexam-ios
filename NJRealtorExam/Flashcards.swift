@@ -95,8 +95,10 @@ struct Flashcards: View {
                     .frame(width: geo.size.width)
             }
             
-            Group{
+            // new hstack
             
+            HStack {
+                
                 Text(flashcardcount)
                     .font(.system(size: 22))
                     .bold()
@@ -104,9 +106,31 @@ struct Flashcards: View {
                     .frame(maxWidth: .infinity, alignment: .center)
                     .background(Color.black)
                     .foregroundColor(.white)
-                    .border(Color.white, width: 5)
                 Text("")
                 
+                Button(action: {
+                    details = 1
+                }, label: {
+                Text("DETAILS")
+                    .bold()
+                    .padding(4)
+                    .font(.system(size: 13))
+                    .background(index == flashcardManager.getCardCount() ? Color.gray : blueBtn)
+                    .cornerRadius(13)
+                    .foregroundColor(.white)
+                }).padding(.trailing,10)
+            }.padding(3)
+             .frame(maxWidth: .infinity, alignment: .center)
+             .background(Color.black)
+             .foregroundColor(.white)
+             .border(Color.white, width: 3)
+            
+            Text("")
+            
+            // new hstack
+            
+            Group{
+            
                 if details == 1 {
                     Text(" Answer Details:   " + flashcardManager.getAnswerDetails())  //  ???????
                         .padding(10)
@@ -120,7 +144,9 @@ struct Flashcards: View {
                         .frame(maxWidth: .infinity, minHeight: 300, alignment: .topLeading)
                         .background(Color.yellow)
                 }
+                
                 Text("")
+                
             }
 
             if ans == 0 {
@@ -194,19 +220,6 @@ struct Flashcards: View {
                 .foregroundColor(.white)
             }).disabled(index == flashcardManager.getCardCount() - 1)
               
-            //  added new details btn  ????????
-            Button(action: {  //  add if to change btn apperance
-                details = 1
-            }, label: {
-            Text("DETAILS")
-                .bold()
-                .padding(7)
-                .font(.system(size: 13))
-                .background(index == flashcardManager.getCardCount() ? Color.gray : blueBtn)
-                .cornerRadius(10)
-                .foregroundColor(.white)
-            })
-                
           }
             
           Text("")
