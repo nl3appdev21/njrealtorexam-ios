@@ -10,7 +10,9 @@ import SwiftUI
 import UIKit
 
 struct AppInstructions: View {
+    
     let greenBtn = Color(red: 76.0/255, green: 84.0/255, blue: 75.0/255)
+    let blueBtn = Color(red: 53.0/255, green: 180.0/255, blue: 230.0/255)
     
     func gotoMenu() {
         if let window = UIApplication.shared.windows.first {
@@ -18,45 +20,46 @@ struct AppInstructions: View {
             window.makeKeyAndVisible()
         }
     }
-    
+
     var body: some View {
-        
-        // place background image here !!
-        // place background image here !!
-        
-        VStack(alignment: .leading, spacing: 0){
+            
+        Group{
+            
+            Text(" ")
+            Text("NJ Realtor Exam App Instructions")
+                .bold()
+                .font(.system(size: 26))
+                .frame(maxWidth: .infinity, alignment: .center)
+                .foregroundColor(.white)
+            
+            Image("testinstruction")
+                .resizable()
+                .scaledToFit()
+                .frame(maxWidth: .infinity, alignment: .center)
+            
+            Spacer()
+                
+            HStack {
             
             Button(action: {
                 gotoMenu()
-                print("goto menu screen")
             }, label: {
-                Text("< BACK <")
-                    .padding(7)
-                    .font(.system(size: 16))
-                    .background(greenBtn)
-                    .foregroundColor(.white)
-            })
+            Text("GOTO MENU")
+                .font(.system(size: 20))
+                .bold()
+                .padding(8)
+                .frame(maxWidth: .infinity, alignment: .center)
+                .background(blueBtn)
+                .foregroundColor(.white)
+                .cornerRadius(10)
+            }).padding(8)
+                
+          }
             
-            Text(" ")
+          Text("")
             
-            Text("this is the appinstructions screen man !!")
-            Text("this is the appinstructions screen man !!")
-            Text(" ")
-            Text("place background image here !!")
-            Text(" ")
-            
-            Button(action: {
-                gotoMenu()
-                print("goto menu screen")
-            }, label: {
-                Text("goto menu")
-                    .padding(7)
-                    .font(.system(size: 16))
-                    .background(greenBtn)
-                    .foregroundColor(.white)
-            })
-            
-            Text(" ")
-        }
+        }.frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .topLeading)
+         .background(Color.gray)
+        
     }
 }

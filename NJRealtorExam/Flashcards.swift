@@ -17,7 +17,6 @@ struct Flashcards: View {
     @State var ansdetails: String = " "
     @State var ansbtn: String = " "
     
-    let thegold = Image("goldwinner")  //  ????????
     let greenBtn = Color(red: 76.0/255, green: 84.0/255, blue: 75.0/255)
     let blueBtn = Color(red: 53.0/255, green: 180.0/255, blue: 230.0/255)
     let flashcardManager = FlashcardManager()
@@ -68,8 +67,6 @@ struct Flashcards: View {
     
     func updateCardCount() -> String {
         let count = String(index + 1) + " / " + String(flashcardManager.getCardCount()) + " Flashcards "
-        //  ????????  + " ? details btn ?"
-        //  ????????  Image("goldwinner")
         return count
     }
 
@@ -94,9 +91,7 @@ struct Flashcards: View {
                     .padding(21)
                     .frame(width: geo.size.width)
             }
-            
-            // new hstack
-            
+  
             HStack {
                 
                 Text(flashcardcount)
@@ -127,8 +122,6 @@ struct Flashcards: View {
              .border(Color.white, width: 3)
             
             Text("")
-            
-            // new hstack
             
             Group{
             

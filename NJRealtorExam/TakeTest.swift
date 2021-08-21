@@ -74,7 +74,7 @@ struct TakeTest: View {
         
         VStack(alignment: .leading, spacing: 0){
             
-            // num correct is how many right answers
+            // get num correct, get it from count from 
             Text((flashcardcount) + (" -- 0 Correct ???? "))
                 .font(.system(size: 17))
                 .bold()
@@ -101,6 +101,7 @@ struct TakeTest: View {
                     .aspectRatio(contentMode: .fit)
                     .padding(21)
                     .frame(width: geo.size.width)
+                    .background(Color.black)
             }
             
             Group{
@@ -109,6 +110,7 @@ struct TakeTest: View {
                     .padding(10)
                     .font(.system(size: 17))
                     .frame(maxWidth: .infinity, minHeight: 200, alignment: .topLeading)
+                    .foregroundColor(.white)
                     .background(Color.gray)
         
                 Text("")
@@ -201,7 +203,7 @@ struct TakeTest: View {
           Text("")
             
         }.frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .topLeading)
-         .background(Color.black)
+         .background(Color.gray)
         
     }
 }

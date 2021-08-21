@@ -71,15 +71,14 @@ struct Menu: View {
 
     var body: some View {
         
-        VStack(alignment: .leading, spacing: 0){
+        Group{
             
-            Text(" ")
+            Text("")
             Text("NJ Realtor Exam")
                 .bold()
                 .font(.system(size: 26))
                 .frame(maxWidth: .infinity, alignment: .center)
                 .foregroundColor(.white)
-            Text(" ")
             
             //  Image("dex01")
             Image("cubeshome")
@@ -126,10 +125,6 @@ struct Menu: View {
                     .cornerRadius(10)
             }).padding(8)
         
-        }.background(Color.gray)
-    
-        VStack(alignment: .leading, spacing: 0){
-            
             Button(action: {
                 gotoLeaderboard()
             }, label: {
@@ -156,7 +151,8 @@ struct Menu: View {
                     .cornerRadius(10)
             }).padding(8)
             
-            // new hstack
+            Spacer()
+            
             HStack {
                 
                 Text("Solutions to your development needs.")
@@ -166,7 +162,6 @@ struct Menu: View {
                     .frame(maxWidth: .infinity, alignment: .center)
                     .background(blueBtn)
                     .foregroundColor(.white)
-                Text("")
                 
                 Button(action: {
                     gotoDevInfo()
@@ -176,18 +171,13 @@ struct Menu: View {
                         .scaledToFit()
                         .frame(maxWidth: 47, maxHeight: 37)
                 }).padding(.trailing,10)
-                
-            }.padding(3)
+  
+            }.padding(10)
              .frame(maxWidth: .infinity, alignment: .center)
              .background(blueBtn)
              .foregroundColor(.white)
-            
-            Text("")
-            // new hstack
-            
-        }.background(Color.gray)
         
-        // }.frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .topLeading)
-        //  .background(Color.gray)
+        }.frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .topLeading)
+         .background(Color.gray)
     }
 }
