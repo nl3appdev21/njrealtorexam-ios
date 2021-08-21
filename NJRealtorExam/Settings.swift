@@ -47,17 +47,26 @@ struct Settings: View {
                 .resizable()
                 .scaledToFit()
                 .frame(maxWidth: .infinity, alignment: .center)
+            Text(" ")
             
             VStack{
                 
+                Divider()
+                    .background(Color.black)
+                    .border(Color.red, width: 8) // ?? adjust thickness ??
                 Text("Randomize Flashcards ")
-                Text(" ")
+                Divider()
+                    .background(Color.black)
+                    .border(Color.red, width: 8) // ?? adjust thickness ??
                 Text("Advertising Cards ")
                 Text("Commission Cards ")
                 Text("Law Cards ")
                 Text("Mortgage Cards ")
                 Text("New Type Cards ")
                 Text("Ownership Cards ")
+                Divider()
+                    .background(Color.black)
+                    .border(Color.red, width: 8) // ?? adjust thickness ??
                 
             }
             
