@@ -13,6 +13,18 @@ struct Settings: View {
     let greenBtn = Color(red: 76.0/255, green: 84.0/255, blue: 75.0/255)
     let blueBtn = Color(red: 53.0/255, green: 180.0/255, blue: 230.0/255)
     
+    // toggle switchs
+    
+    /*
+      ("Randomize Flashcards ")
+      ("Advertising Cards ")
+      ("Commission Cards ")
+      ("Law Cards ")
+      ("Mortgage Cards ")
+      ("New Type Cards ")
+      ("Ownership Cards ")
+    */
+    
     func gotoMenu() {
         if let window = UIApplication.shared.windows.first {
             window.rootViewController = UIHostingController(rootView: Menu())
@@ -35,6 +47,19 @@ struct Settings: View {
                 .resizable()
                 .scaledToFit()
                 .frame(maxWidth: .infinity, alignment: .center)
+            
+            VStack{
+                
+                Text("Randomize Flashcards ")
+                Text(" ")
+                Text("Advertising Cards ")
+                Text("Commission Cards ")
+                Text("Law Cards ")
+                Text("Mortgage Cards ")
+                Text("New Type Cards ")
+                Text("Ownership Cards ")
+                
+            }
             
             Spacer()
                 
