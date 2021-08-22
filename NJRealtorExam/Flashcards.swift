@@ -125,7 +125,7 @@ struct Flashcards: View {
             Text("")
             
             // new box
-            
+            /*
             HStack {
                 
                 Toggle(isOn: $status1) {
@@ -143,7 +143,7 @@ struct Flashcards: View {
              .foregroundColor(.white)
              .border(Color.white, width: 3)
             // Text("")
-            
+            */
             // new box
             
             Group{

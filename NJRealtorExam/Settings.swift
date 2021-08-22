@@ -60,8 +60,10 @@ struct Settings: View {
             
             VStack{
                 
-                Divider()
+                Spacer()
+                    .frame(maxWidth: .infinity, maxHeight: 5)
                     .background(Color.black)
+                    .padding(4)
                 
                 Toggle(isOn: $status1) {
                         Text("Randomize Flashcards")
@@ -74,7 +76,7 @@ struct Settings: View {
                         
                 Spacer()
                     .frame(maxWidth: .infinity, maxHeight: 5)
-                    .background(Color.green)
+                    .background(Color.black)
                     .padding(4)
                 
                 Toggle(isOn: $status2) {
@@ -131,8 +133,10 @@ struct Settings: View {
                 .padding(.leading,67)
                 .padding(.trailing,67)
                 
-                Divider()
+                Spacer()
+                    .frame(maxWidth: .infinity, maxHeight: 5)
                     .background(Color.black)
+                    .padding(4)
                 
             }
             
