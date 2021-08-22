@@ -72,8 +72,10 @@ struct Settings: View {
                         .padding(.leading,67)
                         .padding(.trailing,67)
                         
-                Divider()
-                    .background(Color.black)
+                Spacer()
+                    .frame(maxWidth: .infinity, maxHeight: 5)
+                    .background(Color.green)
+                    .padding(4)
                 
                 Toggle(isOn: $status2) {
                         Text("Advertising Cards")
