@@ -1,5 +1,5 @@
 //
-//  TestManager.swift
+//  TaketestManager.swift
 //  NJRealtorExam
 //
 //  Created by user on 8/22/21.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-public class TestManager {
+public class TaketestManager {
     var index = 0
     var jsonData:[ExamItem]
     private var currentItem:ExamItem?
@@ -17,13 +17,13 @@ public class TestManager {
         currentItem = jsonData[index]
     }
     
-    func nextCard() -> Int{
+    func nextQuestion() -> Int{
         index+=1
         currentItem = jsonData[index]
         return index
     }
     
-    func prevCard() -> Int{
+    func prevQuestion() -> Int{
         index-=1
         currentItem = jsonData[index]
         return index
@@ -45,11 +45,11 @@ public class TestManager {
         return currentItem!.answers[currentItem!.correct]
     }
     
-    func isFirstCard() -> Bool{
+    func isFirstQuestion() -> Bool{
         return index == 0
     }
     
-    func getCardCount() -> Int{
+    func getQuestionCount() -> Int{
         return jsonData.count
     }
     

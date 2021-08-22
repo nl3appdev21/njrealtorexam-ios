@@ -14,7 +14,7 @@
 		CE0CADE226B666BE0044D010 /* ExamItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0CADE126B666BE0044D010 /* ExamItem.swift */; };
 		CE0CADE426B66B290044D010 /* LoadJsonData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0CADE326B66B290044D010 /* LoadJsonData.swift */; };
 		CE0CADE626B700230044D010 /* njrealtorexam_12a.json in Resources */ = {isa = PBXBuildFile; fileRef = CE0CADE526B700230044D010 /* njrealtorexam_12a.json */; };
-		CE6191C826D2F34E00096C12 /* TestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6191C726D2F34E00096C12 /* TestManager.swift */; };
+		CE6191CA26D2F9B600096C12 /* TaketestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6191C926D2F9B600096C12 /* TaketestManager.swift */; };
 		CE97D7AC26ADE0DA008688E2 /* NJRealtorExamApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE97D7AB26ADE0DA008688E2 /* NJRealtorExamApp.swift */; };
 		CE97D7AE26ADE0DA008688E2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE97D7AD26ADE0DA008688E2 /* ContentView.swift */; };
 		CE97D7B026ADE0DD008688E2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE97D7AF26ADE0DD008688E2 /* Assets.xcassets */; };
@@ -60,7 +60,7 @@
 		CE0CADE126B666BE0044D010 /* ExamItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamItem.swift; sourceTree = "<group>"; };
 		CE0CADE326B66B290044D010 /* LoadJsonData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadJsonData.swift; sourceTree = "<group>"; };
 		CE0CADE526B700230044D010 /* njrealtorexam_12a.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = njrealtorexam_12a.json; sourceTree = "<group>"; };
-		CE6191C726D2F34E00096C12 /* TestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestManager.swift; sourceTree = "<group>"; };
+		CE6191C926D2F9B600096C12 /* TaketestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaketestManager.swift; sourceTree = "<group>"; };
 		CE97D7A826ADE0DA008688E2 /* NJRealtorExam.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NJRealtorExam.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE97D7AB26ADE0DA008688E2 /* NJRealtorExamApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NJRealtorExamApp.swift; sourceTree = "<group>"; };
 		CE97D7AD26ADE0DA008688E2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -159,6 +159,7 @@
 				CE97D7EC26AE0F98008688E2 /* CertScreen.swift */,
 				CE0CADE126B666BE0044D010 /* ExamItem.swift */,
 				CE0CADE326B66B290044D010 /* LoadJsonData.swift */,
+				CE6191C926D2F9B600096C12 /* TaketestManager.swift */,
 			);
 			path = NJRealtorExam;
 			sourceTree = "<group>";
@@ -167,7 +168,6 @@
 			isa = PBXGroup;
 			children = (
 				CE97D7B226ADE0DD008688E2 /* Preview Assets.xcassets */,
-				CE6191C726D2F34E00096C12 /* TestManager.swift */,
 			);
 			path = "Preview Content";
 			sourceTree = "<group>";
@@ -332,11 +332,11 @@
 				CE97D7ED26AE0F98008688E2 /* CertScreen.swift in Sources */,
 				CE97D7DD26AE07D0008688E2 /* AppInstructions.swift in Sources */,
 				CE97D7D926ADF453008688E2 /* Flashcards.swift in Sources */,
+				CE6191CA26D2F9B600096C12 /* TaketestManager.swift in Sources */,
 				CE97D7E526AE0D73008688E2 /* Settings.swift in Sources */,
 				CE97D7E926AE0E9C008688E2 /* PassedTest.swift in Sources */,
 				CE97D7EB26AE0F29008688E2 /* FailedTest.swift in Sources */,
 				CE0CADE226B666BE0044D010 /* ExamItem.swift in Sources */,
-				CE6191C826D2F34E00096C12 /* TestManager.swift in Sources */,
 				CE97D7E726AE0DE4008688E2 /* DevInfo.swift in Sources */,
 				CE0CADE426B66B290044D010 /* LoadJsonData.swift in Sources */,
 				CE97D7D726ADE2F4008688E2 /* SplashView.swift in Sources */,

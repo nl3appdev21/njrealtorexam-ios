@@ -11,7 +11,7 @@ import UIKit
 
 struct TakeTest: View {
     @State var index: Int = 0
-    @State var flashcardcount = ""
+    @State var questioncount = ""
     @State var ans: Int = 0
     @State var details: Int = 0
     @State var ansdetails: String = " "
@@ -20,10 +20,10 @@ struct TakeTest: View {
     let thegold = Image("goldwinner")  //  ????????
     let greenBtn = Color(red: 76.0/255, green: 84.0/255, blue: 75.0/255)
     let blueBtn = Color(red: 53.0/255, green: 180.0/255, blue: 230.0/255)
-    let flashcardManager = FlashcardManager()
+    let taketestManager = TaketestManager()
     
     init() {
-       _flashcardcount = State(initialValue:updateCardCount())
+       _questioncount = State(initialValue:updateQuestionCount())
     }
     
     func showrightans() {
@@ -38,8 +38,8 @@ struct TakeTest: View {
     }
     
     func getNext() {
-        index = flashcardManager.nextCard()
-        flashcardcount = updateCardCount()
+        index = taketestManager.nextQuestion()
+        questioncount = updateQuestionCount()
         ans = 0
         details = 0
     }
@@ -51,20 +51,20 @@ struct TakeTest: View {
         }
         
         if ans == 1 {
-            ansbtn = flashcardManager.getCorrectAnswers()
+            ansbtn = taketestManager.getCorrectAnswers()
             ans = 1
         }
     }
     
     func showDetails() {
         if details == 1 {
-            ansdetails  = flashcardManager.getAnswerDetails()
+            ansdetails  = taketestManager.getAnswerDetails()
             //  details = 0 or 1
         }
     }
     
-    func updateCardCount() -> String {
-        let count = String(index + 1) + " / " + String(flashcardManager.getCardCount()) + " Questions "
+    func updateQuestionCount() -> String {
+        let count = String(index + 1) + " / " + String(taketestManager.getQuestionCount()) + " Questions "
         //  ????????  + " ? details btn ?"
         //  ????????  Image("goldwinner")
         return count
@@ -75,7 +75,7 @@ struct TakeTest: View {
         VStack(alignment: .leading, spacing: 0){
             
             // get num correct, get it from count from 
-            Text((flashcardcount) + (" -- 0 Correct ???? "))
+            Text((questioncount) + (" -- 0 Correct ???? "))
                 .font(.system(size: 17))
                 .bold()
                 .padding(10)
@@ -86,7 +86,7 @@ struct TakeTest: View {
             
             Text(" ")
             
-            Text(flashcardManager.getCategory())
+            Text(taketestManager.getCategory())
             .font(.system(size: 22))
             .bold()
             .padding(10)
@@ -96,7 +96,7 @@ struct TakeTest: View {
             .border(Color.black, width: 5)
 
             GeometryReader { geo in
-                Image(flashcardManager.getCategory())
+                Image(taketestManager.getCategory())
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .padding(21)
@@ -106,7 +106,7 @@ struct TakeTest: View {
             
             Group{
                 
-                Text(flashcardManager.getQuestion())
+                Text(taketestManager.getQuestion())
                     .padding(10)
                     .font(.system(size: 17))
                     .frame(maxWidth: .infinity, minHeight: 200, alignment: .topLeading)
@@ -117,7 +117,7 @@ struct TakeTest: View {
                 Button(action: {
                     showrightans()
                 }, label: {
-                    Text(flashcardManager.getanswers()[0])  // ans 00
+                    Text(taketestManager.getanswers()[0])  // ans 00
                         .bold()
                         .padding(13)
                         .font(.system(size: 13))
@@ -130,7 +130,7 @@ struct TakeTest: View {
                 Button(action: {
                     showrightans()
                 }, label: {
-                    Text(flashcardManager.getanswers()[1])  // ans 01
+                    Text(taketestManager.getanswers()[1])  // ans 01
                         .bold()
                         .padding(13)
                         .font(.system(size: 13))
@@ -144,7 +144,7 @@ struct TakeTest: View {
                 Button(action: {
                     showrightans()
                 }, label: {
-                    Text(flashcardManager.getanswers()[2])  // ans 02
+                    Text(taketestManager.getanswers()[2])  // ans 02
                         .bold()
                         .padding(13)
                         .font(.system(size: 13))
@@ -158,7 +158,7 @@ struct TakeTest: View {
                 Button(action: {
                     showrightans()
                 }, label: {
-                    Text(flashcardManager.getanswers()[3])  // ans 03
+                    Text(taketestManager.getanswers()[3])  // ans 03
                         .bold()
                         .padding(13)
                         .font(.system(size: 13))
@@ -192,10 +192,10 @@ struct TakeTest: View {
                 .bold()
                 .padding(12)
                 .font(.system(size: 17))
-                .background(index == flashcardManager.getCardCount() - 1 ? Color.gray : blueBtn)
+                .background(index == taketestManager.getQuestionCount() - 1 ? Color.gray : blueBtn)
                 .cornerRadius(10)
                 .foregroundColor(.white)
-            }).disabled(index == flashcardManager.getCardCount() - 1)
+            }).disabled(index == taketestManager.getQuestionCount() - 1)
               
           }
             
