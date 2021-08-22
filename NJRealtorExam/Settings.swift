@@ -10,6 +10,16 @@ import SwiftUI
 import UIKit
 
 struct Settings: View {
+    @State private var status1 = false
+    @State private var status2 = false
+    @State private var status3 = false
+    @State private var status4 = false
+    @State private var status5 = false
+    @State private var status6 = false
+    @State private var status7 = false
+    @State private var status8 = false
+    @State private var status9 = false
+    
     let greenBtn = Color(red: 76.0/255, green: 84.0/255, blue: 75.0/255)
     let blueBtn = Color(red: 53.0/255, green: 180.0/255, blue: 230.0/255)
     
@@ -47,46 +57,76 @@ struct Settings: View {
                 .resizable()
                 .scaledToFit()
                 .frame(maxWidth: .infinity, alignment: .center)
-            Text(" ")
+            // Text(" ")
             
             VStack{
                 
                 Divider()
                     .background(Color.black)
-                Text("Randomize Flashcards")
-                    .bold()
-                    .font(.system(size: 17))
-                    .foregroundColor(.white)
-                Divider()
-                    .background(Color.black)
-                Text("Advertising Cards")
-                    .bold()
-                    .font(.system(size: 17))
-                    .foregroundColor(.white)
-                Text("Commission Cards")
-                    .bold()
-                    .font(.system(size: 17))
-                    .foregroundColor(.white)
-                Text("Law Cards ")
-                    .bold()
-                    .font(.system(size: 17))
-                    .foregroundColor(.white)
-                Text("Mortgage Cards")
-                    .bold()
-                    .font(.system(size: 17))
-                    .foregroundColor(.white)
-                Text("New Type Cards")
-                    .bold()
-                    .font(.system(size: 17))
-                    .foregroundColor(.white)
-                Text("Ownership Cards")
-                    .bold()
-                    .font(.system(size: 17))
-                    .foregroundColor(.white)
+                
+                Toggle(isOn: $status1) {
+                            Text("Rand")
+                        }
+                        .toggleStyle(SwitchToggleStyle())
+                        .font(.system(size: 17))
+                        .foregroundColor(.white)
+                        .padding(8)
+                
                 Divider()
                     .background(Color.black)
                 
-            }
+                Toggle(isOn: $status2) {
+                            Text("new")
+                        }
+                        .toggleStyle(SwitchToggleStyle())
+                        .font(.system(size: 17))
+                        .foregroundColor(.white)
+                        .padding(8)
+                Toggle(isOn: $status3) {
+                            Text("math")
+                        }
+                        .toggleStyle(SwitchToggleStyle())
+                        .font(.system(size: 17))
+                        .foregroundColor(.white)
+                        .padding(8)
+                
+                Toggle(isOn: $status4) {
+                            Text("law")
+                        }
+                        .toggleStyle(SwitchToggleStyle())
+                        .font(.system(size: 17))
+                        .foregroundColor(.white)
+                        .padding(8)
+                
+                Toggle(isOn: $status5) {
+                            Text("commis")
+                        }
+                        .toggleStyle(SwitchToggleStyle())
+                        .font(.system(size: 17))
+                        .foregroundColor(.white)
+                        .padding(8)
+                
+                Toggle(isOn: $status6) {
+                            Text("ads")
+                        }
+                        .toggleStyle(SwitchToggleStyle())
+                        .font(.system(size: 17))
+                        .foregroundColor(.white)
+                        .padding(8)
+                
+                Toggle(isOn: $status7) {
+                            Text("own")
+                        }
+                        .toggleStyle(SwitchToggleStyle())
+                        .font(.system(size: 17))
+                        .foregroundColor(.white)
+                        .padding(8)
+                
+                Divider()
+                    .background(Color.black)
+                
+            }//.frame(alignment: .center)
+             //.padding(88)
             
             Spacer()
                 
@@ -109,8 +149,7 @@ struct Settings: View {
             
           Text("")
             
-        }.frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .topLeading)
-         .background(Color.gray)
+        }.background(Color.gray)
         
     }
 }
