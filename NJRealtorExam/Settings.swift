@@ -24,7 +24,6 @@ struct Settings: View {
     let blueBtn = Color(red: 53.0/255, green: 180.0/255, blue: 230.0/255)
     
     // toggle switchs
-    
     /*
       ("Randomize Flashcards ")
       ("Advertising Cards ")
@@ -65,68 +64,75 @@ struct Settings: View {
                     .background(Color.black)
                 
                 Toggle(isOn: $status1) {
-                            Text("Rand")
+                            Text("Randomize Flashcards")
                         }
                         .toggleStyle(SwitchToggleStyle())
                         .font(.system(size: 17))
                         .foregroundColor(.white)
-                        .padding(8)
-                
+                        .padding(.leading,71)
+                        .padding(.trailing,71)
+                        
                 Divider()
                     .background(Color.black)
                 
                 Toggle(isOn: $status2) {
-                            Text("new")
+                            Text("Advertising Cards")
                         }
                         .toggleStyle(SwitchToggleStyle())
                         .font(.system(size: 17))
                         .foregroundColor(.white)
-                        .padding(8)
+                        .padding(.leading,71)
+                        .padding(.trailing,71)
+                
                 Toggle(isOn: $status3) {
-                            Text("math")
+                            Text("Commission Cards")
                         }
                         .toggleStyle(SwitchToggleStyle())
                         .font(.system(size: 17))
                         .foregroundColor(.white)
-                        .padding(8)
+                        .padding(.leading,71)
+                        .padding(.trailing,71)
                 
                 Toggle(isOn: $status4) {
-                            Text("law")
+                            Text("Law Cards")
                         }
                         .toggleStyle(SwitchToggleStyle())
                         .font(.system(size: 17))
                         .foregroundColor(.white)
-                        .padding(8)
+                        .padding(.leading,71)
+                        .padding(.trailing,71)
                 
                 Toggle(isOn: $status5) {
-                            Text("commis")
+                            Text("Mortgage Cards")
                         }
                         .toggleStyle(SwitchToggleStyle())
                         .font(.system(size: 17))
                         .foregroundColor(.white)
-                        .padding(8)
+                        .padding(.leading,71)
+                        .padding(.trailing,71)
                 
                 Toggle(isOn: $status6) {
-                            Text("ads")
+                            Text("New Type Cards")
                         }
                         .toggleStyle(SwitchToggleStyle())
                         .font(.system(size: 17))
                         .foregroundColor(.white)
-                        .padding(8)
+                        .padding(.leading,71)
+                        .padding(.trailing,71)
                 
                 Toggle(isOn: $status7) {
-                            Text("own")
+                            Text("Ownership Cards")
                         }
                         .toggleStyle(SwitchToggleStyle())
                         .font(.system(size: 17))
                         .foregroundColor(.white)
-                        .padding(8)
+                .padding(.leading,71)
+                .padding(.trailing,71)
                 
                 Divider()
                     .background(Color.black)
                 
-            }//.frame(alignment: .center)
-             //.padding(88)
+            }
             
             Spacer()
                 
