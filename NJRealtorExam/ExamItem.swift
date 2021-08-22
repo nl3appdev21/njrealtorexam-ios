@@ -13,7 +13,6 @@ struct ExamItem: Codable {
     var id: Int
     var category: String
     var question: String
-    // var answers: String // use for njrealtorexam_12a.json with out array
     var answers: [String] // use for njrealtorexam_12.json with array
     var correct: Int
     var details: String

@@ -110,7 +110,6 @@ struct TakeTest: View {
                     .padding(10)
                     .font(.system(size: 17))
                     .frame(maxWidth: .infinity, minHeight: 200, alignment: .topLeading)
-                    .foregroundColor(.white)
                     .background(Color.gray)
         
                 Text("")
