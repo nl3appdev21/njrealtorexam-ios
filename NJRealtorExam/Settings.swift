@@ -64,70 +64,70 @@ struct Settings: View {
                     .background(Color.black)
                 
                 Toggle(isOn: $status1) {
-                            Text("Randomize Flashcards")
+                        Text("Randomize Flashcards")
                         }
                         .toggleStyle(SwitchToggleStyle())
                         .font(.system(size: 17))
                         .foregroundColor(.white)
-                        .padding(.leading,71)
-                        .padding(.trailing,71)
+                        .padding(.leading,67)
+                        .padding(.trailing,67)
                         
                 Divider()
                     .background(Color.black)
                 
                 Toggle(isOn: $status2) {
-                            Text("Advertising Cards")
+                        Text("Advertising Cards")
                         }
                         .toggleStyle(SwitchToggleStyle())
                         .font(.system(size: 17))
                         .foregroundColor(.white)
-                        .padding(.leading,71)
-                        .padding(.trailing,71)
+                        .padding(.leading,67)
+                        .padding(.trailing,67)
                 
                 Toggle(isOn: $status3) {
-                            Text("Commission Cards")
+                        Text("Commission Cards")
                         }
                         .toggleStyle(SwitchToggleStyle())
                         .font(.system(size: 17))
                         .foregroundColor(.white)
-                        .padding(.leading,71)
-                        .padding(.trailing,71)
+                        .padding(.leading,67)
+                        .padding(.trailing,67)
                 
                 Toggle(isOn: $status4) {
-                            Text("Law Cards")
+                        Text("Law Cards")
                         }
                         .toggleStyle(SwitchToggleStyle())
                         .font(.system(size: 17))
                         .foregroundColor(.white)
-                        .padding(.leading,71)
-                        .padding(.trailing,71)
+                        .padding(.leading,67)
+                        .padding(.trailing,67)
                 
                 Toggle(isOn: $status5) {
-                            Text("Mortgage Cards")
+                        Text("Mortgage Cards")
                         }
                         .toggleStyle(SwitchToggleStyle())
                         .font(.system(size: 17))
                         .foregroundColor(.white)
-                        .padding(.leading,71)
-                        .padding(.trailing,71)
+                        .padding(.leading,67)
+                        .padding(.trailing,67)
                 
                 Toggle(isOn: $status6) {
-                            Text("New Type Cards")
+                        Text("New Type Cards")
                         }
                         .toggleStyle(SwitchToggleStyle())
                         .font(.system(size: 17))
                         .foregroundColor(.white)
-                        .padding(.leading,71)
-                        .padding(.trailing,71)
+                        .padding(.leading,67)
+                        .padding(.trailing,67)
                 
                 Toggle(isOn: $status7) {
-                            Text("Ownership Cards")
+                        Text("Ownership Cards")
                         }
                         .toggleStyle(SwitchToggleStyle())
                         .font(.system(size: 17))
                         .foregroundColor(.white)
-                .padding(.leading,71)
-                .padding(.trailing,71)
+                .padding(.leading,67)
+                .padding(.trailing,67)
                 
                 Divider()
                     .background(Color.black)

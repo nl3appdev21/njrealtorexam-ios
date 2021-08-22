@@ -16,6 +16,7 @@ struct Flashcards: View {
     @State var details: Int = 0
     @State var ansdetails: String = " "
     @State var ansbtn: String = " "
+    @State private var status1 = false
     
     let greenBtn = Color(red: 76.0/255, green: 84.0/255, blue: 75.0/255)
     let blueBtn = Color(red: 53.0/255, green: 180.0/255, blue: 230.0/255)
@@ -106,7 +107,7 @@ struct Flashcards: View {
                 Button(action: {
                     details = 1
                 }, label: {
-                Text("DETAILS")
+                Text(" DETAILS aa ")
                     .bold()
                     .padding(4)
                     .font(.system(size: 13))
@@ -122,6 +123,28 @@ struct Flashcards: View {
              .border(Color.white, width: 3)
             
             Text("")
+            
+            // new box
+            
+            HStack {
+                
+                Toggle(isOn: $status1) {
+                    Text("Use Customize Card Settings")
+                        }
+                        .toggleStyle(SwitchToggleStyle())
+                        .font(.system(size: 17))
+                        .foregroundColor(.white)
+                        .padding(.leading,44)
+                        .padding(.trailing,44)
+                
+            }.padding(13)
+             .frame(maxWidth: .infinity, alignment: .center)
+             .background(Color.black)
+             .foregroundColor(.white)
+             .border(Color.white, width: 3)
+            // Text("")
+            
+            // new box
             
             Group{
             
