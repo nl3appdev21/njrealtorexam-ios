@@ -37,53 +37,65 @@ struct TakeTest: View {
     
     func showrightans1() {
         print(ansnum)
+        print(" -------- ")
         print(" ansbtn0 clicked ")
+        print(" -------- ")
         if (ansbtn1 == taketestManager.getAnsNum()){
             anscorrect += 1
             ansisright = true
             btnclicked = true
             print(" 1 is the correct answer ? ")
-            print(anscorrect)
             print(" -------- ")
+            print(anscorrect)
+            print(" ")
         }
     }
     
     func showrightans2() {
         print(ansnum)
+        print(" -------- ")
         print(" ansbtn1 clicked ")
+        print(" -------- ")
         if (ansbtn2 == taketestManager.getAnsNum()){
             anscorrect += 1
             ansisright = true
             btnclicked = true
             print(" 2 is the correct answer ?? ")
-            print(anscorrect)
             print(" -------- ")
+            print(anscorrect)
+            print(" ")
         }
     }
     
     func showrightans3() {
         print(ansnum)
+        print(" -------- ")
         print(" ansbtn2 clicked ")
+        print(" -------- ")
         if (ansbtn3 == taketestManager.getAnsNum()){
             anscorrect += 1
             ansisright = true
             btnclicked = true
             print(" 3 is the correct answer ??? ")
-            print(anscorrect)
             print(" -------- ")
+            print(anscorrect)
+            print(" ")
         }
     }
     
     func showrightans4() {
         print(ansnum)
+        print(" -------- ")
         print(" ansbtn3 clicked ")
+        print(" -------- ")
         if (ansbtn4 == taketestManager.getAnsNum()){
             anscorrect += 1
             ansisright = true
             btnclicked = true
             print(" 4 is the correct answer ???? ")
-            print(anscorrect)
             print(" -------- ")
+            print(anscorrect)
+            print(" ")
         }
     }
     
@@ -116,7 +128,7 @@ struct TakeTest: View {
     func updateQuestionCount() -> String {
         let count = String(index + 1) + " / " + String(taketestManager.getQuestionCount()) + " Questions "
         print(taketestManager.getAnsNum())
-        print(" is the correct answer ")
+        print(" is the correct answer *** ")
         return count
     }
 
@@ -124,7 +136,7 @@ struct TakeTest: View {
         
         VStack(alignment: .leading, spacing: 0){
             
-            Text((questioncount) + (" Correct ?? "))
+            Text((questioncount) + ("   ***   Correct  ") + String(anscorrect))
                 .font(.system(size: 17))
                 .bold()
                 .padding(10)
