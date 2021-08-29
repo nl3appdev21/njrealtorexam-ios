@@ -11,15 +11,22 @@ import UIKit
 
 struct TakeTest: View {
     @State var index: Int = 0
-    @State var questioncount = ""
+    @State var questioncount = " "
     @State var ansnum: Int = 0
-    @State var anscorrect: Int = 13
+    @State var anscorrect: Int = 0
     @State var details: Int = 0
     @State var ansdetails: String = " "
-    @State var ansbtn: String = " "  //  ????
-    @State var ansbtn1: Int = -1  //  ????
-
-    let thegold = Image("goldwinner")  //  ????????
+    @State var ansbtn: String = " "
+    @State var ansbtn1: Int = -1
+    @State var ansbtn2: Int = -1
+    @State var ansbtn3: Int = -1
+    @State var ansbtn4: Int = -1
+    @State var ansisright: Bool = false
+    @State var btnclicked: Bool = false
+    
+    let thegold = Image("goldwinner")
+    let rightbtn = Color.green
+    let wrongbtn = Color.red
     let greenBtn = Color(red: 76.0/255, green: 84.0/255, blue: 75.0/255)
     let blueBtn = Color(red: 53.0/255, green: 180.0/255, blue: 230.0/255)
     let taketestManager = TaketestManager()
@@ -28,14 +35,55 @@ struct TakeTest: View {
        _questioncount = State(initialValue:updateQuestionCount())
     }
     
-    func showrightans() {
+    func showrightans1() {
         print(ansnum)
-        print(" ansbtn clicked ")
+        print(" ansbtn0 clicked ")
         if (ansbtn1 == taketestManager.getAnsNum()){
-            // print(" what did you do ???? ")
-            // print(ansbtn1)
-            // print(" ans correct is = ")
+            anscorrect += 1
+            ansisright = true
+            btnclicked = true
+            print(" 1 is the correct answer ? ")
             print(anscorrect)
+            print(" -------- ")
+        }
+    }
+    
+    func showrightans2() {
+        print(ansnum)
+        print(" ansbtn1 clicked ")
+        if (ansbtn2 == taketestManager.getAnsNum()){
+            anscorrect += 1
+            ansisright = true
+            btnclicked = true
+            print(" 2 is the correct answer ?? ")
+            print(anscorrect)
+            print(" -------- ")
+        }
+    }
+    
+    func showrightans3() {
+        print(ansnum)
+        print(" ansbtn2 clicked ")
+        if (ansbtn3 == taketestManager.getAnsNum()){
+            anscorrect += 1
+            ansisright = true
+            btnclicked = true
+            print(" 3 is the correct answer ??? ")
+            print(anscorrect)
+            print(" -------- ")
+        }
+    }
+    
+    func showrightans4() {
+        print(ansnum)
+        print(" ansbtn3 clicked ")
+        if (ansbtn4 == taketestManager.getAnsNum()){
+            anscorrect += 1
+            ansisright = true
+            btnclicked = true
+            print(" 4 is the correct answer ???? ")
+            print(anscorrect)
+            print(" -------- ")
         }
     }
     
@@ -49,35 +97,24 @@ struct TakeTest: View {
     func getNext() {
         index = taketestManager.nextQuestion()
         questioncount = updateQuestionCount()
-        ansnum = 0
+        ansnum = -1
         ansbtn1 = -1
+        ansbtn2 = -1
+        ansbtn3 = -1
+        ansbtn4 = -1
+        ansisright = false
+        btnclicked = false
         details = 0
-        //  ??  print(taketestManager.getAnsNum())
-    }
-    
-    func showAnswer() {
-        if ansnum == 0 {
-            ansbtn = "SHOW ANSWER"
-            ansnum = 1
-        }
-        
-        if ansnum == 1 {
-            ansbtn = taketestManager.getCorrectAnswers()
-            ansnum = 1
-        }
     }
     
     func showDetails() {
         if details == 1 {
             ansdetails  = taketestManager.getAnswerDetails()
-            //  details = 0 or 1
         }
     }
     
     func updateQuestionCount() -> String {
         let count = String(index + 1) + " / " + String(taketestManager.getQuestionCount()) + " Questions "
-        //  ????????  + " ? details btn ?"
-        //  ????????  Image("goldwinner")
         print(taketestManager.getAnsNum())
         print(" is the correct answer ")
         return count
@@ -87,7 +124,6 @@ struct TakeTest: View {
         
         VStack(alignment: .leading, spacing: 0){
             
-            // get num correct, get it from count from 
             Text((questioncount) + (" Correct ?? "))
                 .font(.system(size: 17))
                 .bold()
@@ -96,7 +132,6 @@ struct TakeTest: View {
                 .background(Color.black)
                 .foregroundColor(.white)
                 .border(Color.white, width: 5)
-            
             Text(" ")
             
             Text(taketestManager.getCategory())
@@ -123,32 +158,32 @@ struct TakeTest: View {
                     .padding(10)
                     .font(.system(size: 17))
                     .frame(maxWidth: .infinity, minHeight: 200, alignment: .topLeading)
-                    .foregroundColor(.white) // ??
+                    .foregroundColor(.white)
                     .background(Color.gray)
-        
                 Text("")
                     
                 Button(action: {
                     ansnum = 0
                     ansbtn1 = 0
-                    showrightans()
+                    showrightans1()
                 }, label: {
-                    Text(taketestManager.getanswers()[0])  // ans 00
+                    Text(taketestManager.getanswers()[0])  // ans 01
                         .bold()
                         .padding(13)
                         .font(.system(size: 13))
                         .frame(maxWidth: .infinity, alignment: .topLeading)
                         .background(blueBtn)
+                        // ???? .background(index == flashcardManager.getCardCount() ? Color.gray : blueBtn)
                         .foregroundColor(.white)
-                    }) // .padding(.leading,10) // ?? use to add padding to sides of textbox or buttons
+                    })
                 Text("")
                 
                 Button(action: {
                     ansnum = 1
-                    ansbtn1 = 1
-                    showrightans()
+                    ansbtn2 = 1
+                    showrightans2()
                 }, label: {
-                    Text(taketestManager.getanswers()[1])  // ans 01
+                    Text(taketestManager.getanswers()[1])  // ans 02
                         .bold()
                         .padding(13)
                         .font(.system(size: 13))
@@ -161,10 +196,10 @@ struct TakeTest: View {
                 
                 Button(action: {
                     ansnum = 2
-                    ansbtn1 = 2
-                    showrightans()
+                    ansbtn3 = 2
+                    showrightans3()
                 }, label: {
-                    Text(taketestManager.getanswers()[2])  // ans 02
+                    Text(taketestManager.getanswers()[2])  // ans 03
                         .bold()
                         .padding(13)
                         .font(.system(size: 13))
@@ -177,10 +212,10 @@ struct TakeTest: View {
                 
                 Button(action: {
                     ansnum = 3
-                    ansbtn1 = 3
-                    showrightans()
+                    ansbtn4 = 3
+                    showrightans4()
                 }, label: {
-                    Text(taketestManager.getanswers()[3])  // ans 03
+                    Text(taketestManager.getanswers()[3])  // ans 04
                         .bold()
                         .padding(13)
                         .font(.system(size: 13))
@@ -188,7 +223,6 @@ struct TakeTest: View {
                         .background(blueBtn)
                         .foregroundColor(.white)
                 }) // .padding(.leading,10) // ?? use to add padding to sides of textbox or buttons
-        
                 Text("")
                 
             }
@@ -225,6 +259,5 @@ struct TakeTest: View {
             
         }.frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .topLeading)
          .background(Color.gray)
-        
     }
 }
