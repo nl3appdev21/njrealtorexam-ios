@@ -56,4 +56,9 @@ public class FlashcardManager {
     func getAnswerDetails() -> String{
         return currentItem!.details
     }
+    
+    func getAnsNum() -> Int{
+        return currentItem!.correct
+    }
+    
 }

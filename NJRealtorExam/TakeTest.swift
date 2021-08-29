@@ -12,11 +12,13 @@ import UIKit
 struct TakeTest: View {
     @State var index: Int = 0
     @State var questioncount = ""
-    @State var ans: Int = 0
+    @State var ansnum: Int = 0
+    @State var anscorrect: Int = 13
     @State var details: Int = 0
     @State var ansdetails: String = " "
-    @State var ansbtn: String = " "
-    
+    @State var ansbtn: String = " "  //  ????
+    @State var ansbtn1: Int = -1  //  ????
+
     let thegold = Image("goldwinner")  //  ????????
     let greenBtn = Color(red: 76.0/255, green: 84.0/255, blue: 75.0/255)
     let blueBtn = Color(red: 53.0/255, green: 180.0/255, blue: 230.0/255)
@@ -27,7 +29,14 @@ struct TakeTest: View {
     }
     
     func showrightans() {
-        print("show right or wrong ans")
+        print(ansnum)
+        print(" ansbtn clicked ")
+        if (ansbtn1 == taketestManager.getAnsNum()){
+            // print(" what did you do ???? ")
+            // print(ansbtn1)
+            // print(" ans correct is = ")
+            print(anscorrect)
+        }
     }
     
     func gotoMenu() {
@@ -40,19 +49,21 @@ struct TakeTest: View {
     func getNext() {
         index = taketestManager.nextQuestion()
         questioncount = updateQuestionCount()
-        ans = 0
+        ansnum = 0
+        ansbtn1 = -1
         details = 0
+        //  ??  print(taketestManager.getAnsNum())
     }
     
     func showAnswer() {
-        if ans == 0 {
+        if ansnum == 0 {
             ansbtn = "SHOW ANSWER"
-            ans = 1
+            ansnum = 1
         }
         
-        if ans == 1 {
+        if ansnum == 1 {
             ansbtn = taketestManager.getCorrectAnswers()
-            ans = 1
+            ansnum = 1
         }
     }
     
@@ -67,6 +78,8 @@ struct TakeTest: View {
         let count = String(index + 1) + " / " + String(taketestManager.getQuestionCount()) + " Questions "
         //  ????????  + " ? details btn ?"
         //  ????????  Image("goldwinner")
+        print(taketestManager.getAnsNum())
+        print(" is the correct answer ")
         return count
     }
 
@@ -75,7 +88,7 @@ struct TakeTest: View {
         VStack(alignment: .leading, spacing: 0){
             
             // get num correct, get it from count from 
-            Text((questioncount) + (" -- 0 Correct ???? "))
+            Text((questioncount) + (" Correct ?? "))
                 .font(.system(size: 17))
                 .bold()
                 .padding(10)
@@ -110,11 +123,14 @@ struct TakeTest: View {
                     .padding(10)
                     .font(.system(size: 17))
                     .frame(maxWidth: .infinity, minHeight: 200, alignment: .topLeading)
+                    .foregroundColor(.white) // ??
                     .background(Color.gray)
         
                 Text("")
                     
                 Button(action: {
+                    ansnum = 0
+                    ansbtn1 = 0
                     showrightans()
                 }, label: {
                     Text(taketestManager.getanswers()[0])  // ans 00
@@ -128,6 +144,8 @@ struct TakeTest: View {
                 Text("")
                 
                 Button(action: {
+                    ansnum = 1
+                    ansbtn1 = 1
                     showrightans()
                 }, label: {
                     Text(taketestManager.getanswers()[1])  // ans 01
@@ -142,6 +160,8 @@ struct TakeTest: View {
                 Text("")
                 
                 Button(action: {
+                    ansnum = 2
+                    ansbtn1 = 2
                     showrightans()
                 }, label: {
                     Text(taketestManager.getanswers()[2])  // ans 02
@@ -156,6 +176,8 @@ struct TakeTest: View {
                 Text("")
                 
                 Button(action: {
+                    ansnum = 3
+                    ansbtn1 = 3
                     showrightans()
                 }, label: {
                     Text(taketestManager.getanswers()[3])  // ans 03

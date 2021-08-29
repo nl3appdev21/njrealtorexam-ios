@@ -45,6 +45,7 @@ struct Flashcards: View {
         flashcardcount = updateCardCount()
         ans = 0
         details = 0
+        //  ??  print(flashcardManager.getAnsNum())
     }
     
     func showAnswer() {
@@ -57,6 +58,8 @@ struct Flashcards: View {
             ansbtn = flashcardManager.getCorrectAnswers()
             ans = 1
         }
+        print(flashcardManager.getAnsNum())
+        print(" is the correct answer ")
     }
     
     func showDetails() {
@@ -107,7 +110,7 @@ struct Flashcards: View {
                 Button(action: {
                     details = 1
                 }, label: {
-                Text(" DETAILS aa ")
+                Text(" DETAILS ")
                     .bold()
                     .padding(4)
                     .font(.system(size: 13))
