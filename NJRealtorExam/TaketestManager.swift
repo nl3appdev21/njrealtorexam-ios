@@ -11,10 +11,21 @@ public class TaketestManager {
     var index = 0
     var jsonData:[ExamItem]
     private var currentItem:ExamItem?
+    private var score:Float = -1
+    var correctCount:Int = 0
 
     init(){
         jsonData = LoadJsonData().examItem  //  loads the json file !!
         currentItem = jsonData[index]
+    }
+    
+    func submitAnswer(index:Int) -> Bool{
+        let isCorrect = index == currentItem!.correct
+        if(isCorrect){
+            correctCount+=1
+        }
+        print(correctCount)
+        return isCorrect
     }
     
     func nextQuestion() -> Int{

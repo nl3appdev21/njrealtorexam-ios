@@ -12,21 +12,15 @@ import UIKit
 struct TakeTest: View {
     @State var index: Int = 0
     @State var questioncount = " "
-    @State var ansnum: Int = 0
-    @State var anscorrect: Int = 0
-    @State var details: Int = 0
-    @State var ansdetails: String = " "
+    @State var ansnum: Int = -1
+    @State var ansCorrect: Int = -1
+    @State var correctCount:Int = 0
     @State var ansbtn: String = " "
-    @State var ansbtn1: Int = -1
-    @State var ansbtn2: Int = -1
-    @State var ansbtn3: Int = -1
-    @State var ansbtn4: Int = -1
-    @State var ansisright: Bool = false
-    @State var btnclicked: Bool = false
+    @State var btnClicked:Int = -1
     
-    let thegold = Image("goldwinner")
-    let rightbtn = Color.green
-    let wrongbtn = Color.red
+    let theGold = Image("goldwinner")
+    let rightBtn = Color.green
+    let wrongBtn = Color.red
     let greenBtn = Color(red: 76.0/255, green: 84.0/255, blue: 75.0/255)
     let blueBtn = Color(red: 53.0/255, green: 180.0/255, blue: 230.0/255)
     let taketestManager = TaketestManager()
@@ -35,70 +29,16 @@ struct TakeTest: View {
        _questioncount = State(initialValue:updateQuestionCount())
     }
     
-    func showrightans1() {
-        print(ansnum)
-        print(" -------- ")
-        print(" ansbtn0 clicked ")
-        print(" -------- ")
-        if (ansbtn1 == taketestManager.getAnsNum()){
-            anscorrect += 1
-            ansisright = true
-            btnclicked = true
-            print(" 1 is the correct answer ? ")
-            print(" -------- ")
-            print(anscorrect)
-            print(" ")
+    func checkAnswer(index:Int) {
+        let isCorrect = taketestManager.submitAnswer(index: index)
+        correctCount = taketestManager.correctCount
+        ansnum = taketestManager.getAnsNum()
+        btnClicked = index
+        if(isCorrect){
+            ansCorrect = index
         }
     }
-    
-    func showrightans2() {
-        print(ansnum)
-        print(" -------- ")
-        print(" ansbtn1 clicked ")
-        print(" -------- ")
-        if (ansbtn2 == taketestManager.getAnsNum()){
-            anscorrect += 1
-            ansisright = true
-            btnclicked = true
-            print(" 2 is the correct answer ?? ")
-            print(" -------- ")
-            print(anscorrect)
-            print(" ")
-        }
-    }
-    
-    func showrightans3() {
-        print(ansnum)
-        print(" -------- ")
-        print(" ansbtn2 clicked ")
-        print(" -------- ")
-        if (ansbtn3 == taketestManager.getAnsNum()){
-            anscorrect += 1
-            ansisright = true
-            btnclicked = true
-            print(" 3 is the correct answer ??? ")
-            print(" -------- ")
-            print(anscorrect)
-            print(" ")
-        }
-    }
-    
-    func showrightans4() {
-        print(ansnum)
-        print(" -------- ")
-        print(" ansbtn3 clicked ")
-        print(" -------- ")
-        if (ansbtn4 == taketestManager.getAnsNum()){
-            anscorrect += 1
-            ansisright = true
-            btnclicked = true
-            print(" 4 is the correct answer ???? ")
-            print(" -------- ")
-            print(anscorrect)
-            print(" ")
-        }
-    }
-    
+
     func gotoMenu() {
         if let window = UIApplication.shared.windows.first {
             window.rootViewController = UIHostingController(rootView: Menu())
@@ -109,20 +49,6 @@ struct TakeTest: View {
     func getNext() {
         index = taketestManager.nextQuestion()
         questioncount = updateQuestionCount()
-        ansnum = -1
-        ansbtn1 = -1
-        ansbtn2 = -1
-        ansbtn3 = -1
-        ansbtn4 = -1
-        ansisright = false
-        btnclicked = false
-        details = 0
-    }
-    
-    func showDetails() {
-        if details == 1 {
-            ansdetails  = taketestManager.getAnswerDetails()
-        }
     }
     
     func updateQuestionCount() -> String {
@@ -136,7 +62,7 @@ struct TakeTest: View {
         
         VStack(alignment: .leading, spacing: 0){
             
-            Text((questioncount) + ("   ***   Correct  ") + String(anscorrect))
+            Text((questioncount) + ("   ***   Correct  ") + String(correctCount))
                 .font(.system(size: 17))
                 .bold()
                 .padding(10)
@@ -175,64 +101,56 @@ struct TakeTest: View {
                 Text("")
                     
                 Button(action: {
-                    ansnum = 0
-                    ansbtn1 = 0
-                    showrightans1()
+                    checkAnswer(index: 0)
                 }, label: {
                     Text(taketestManager.getanswers()[0])  // ans 01
                         .bold()
                         .padding(13)
                         .font(.system(size: 13))
                         .frame(maxWidth: .infinity, alignment: .topLeading)
-                        .background(blueBtn)
-                        // ???? .background(index == flashcardManager.getCardCount() ? Color.gray : blueBtn)
+                        // .background(blueBtn)
+                        .background(ansnum > -1 ? (ansnum == 0 ? rightBtn: btnClicked == 0 ? wrongBtn: blueBtn) : blueBtn)
                         .foregroundColor(.white)
                     })
                 Text("")
                 
                 Button(action: {
-                    ansnum = 1
-                    ansbtn2 = 1
-                    showrightans2()
+                    checkAnswer(index: 1)
                 }, label: {
                     Text(taketestManager.getanswers()[1])  // ans 02
                         .bold()
                         .padding(13)
                         .font(.system(size: 13))
                         .frame(maxWidth: .infinity, alignment: .topLeading)
-                        .background(blueBtn)
+                        .background(ansnum > -1 ? (ansnum == 1 ? rightBtn: btnClicked == 1 ? wrongBtn: blueBtn) : blueBtn)
                         .foregroundColor(.white)
                 }) // .padding(.leading,10) // ?? use to add padding to sides of textbox or buttons
         
                 Text("")
                 
                 Button(action: {
-                    ansnum = 2
-                    ansbtn3 = 2
-                    showrightans3()
+                    checkAnswer(index: 2)
                 }, label: {
                     Text(taketestManager.getanswers()[2])  // ans 03
                         .bold()
                         .padding(13)
                         .font(.system(size: 13))
                         .frame(maxWidth: .infinity, alignment: .topLeading)
-                        .background(blueBtn)
+                        .background(ansnum > -1 ? (ansnum == 2 ? rightBtn: btnClicked == 2 ? wrongBtn: blueBtn) : blueBtn)
                         .foregroundColor(.white)
                 }) // .padding(.leading,10) // ?? use to add padding to sides of textbox or buttons
         
                 Text("")
                 
                 Button(action: {
-                    ansnum = 3
-                    ansbtn4 = 3
-                    showrightans4()
+                    checkAnswer(index: 3)
                 }, label: {
                     Text(taketestManager.getanswers()[3])  // ans 04
                         .bold()
                         .padding(13)
                         .font(.system(size: 13))
                         .frame(maxWidth: .infinity, alignment: .topLeading)
-                        .background(blueBtn)
+                        .background(ansnum > -1 ? (ansnum == 3 ? rightBtn: btnClicked == 3 ? wrongBtn: blueBtn) : blueBtn)
                         .foregroundColor(.white)
                 }) // .padding(.leading,10) // ?? use to add padding to sides of textbox or buttons
                 Text("")
@@ -255,6 +173,8 @@ struct TakeTest: View {
             
             Button(action: {  //  add if to change button apperance
                 getNext()
+                ansnum = -1
+                btnClicked = -1
             }, label: {
             Text("NEXT QUESTION")
                 .bold()
