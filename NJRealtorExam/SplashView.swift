@@ -35,7 +35,6 @@ struct SplashView: View {
             
             Button(action: {
                 gotoMenu()
-                print("goto menu screen")
             }, label: {
                 Text("goto menu")
                     .padding(7)
@@ -48,7 +47,6 @@ struct SplashView: View {
         }
         .onAppear(){
             jsonData = LoadJsonData().examItem
-            // print(data[1].answers[1])
         }
     }
 }

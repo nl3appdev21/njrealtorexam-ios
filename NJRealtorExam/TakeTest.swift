@@ -54,8 +54,6 @@ struct TakeTest: View {
     
     func updateQuestionCount() -> String {
         let count = String(index + 1) + " / " + String(taketestManager.getQuestionCount()) + " Questions "
-        print(taketestManager.getAnsNum())
-        print(" is the correct answer *** ")
         return count
     }
 
@@ -182,6 +180,7 @@ struct TakeTest: View {
                 .padding(12)
                 .font(.system(size: 17))
                 .background(index == taketestManager.getQuestionCount() - 1 ? Color.gray : blueBtn)
+                //  .background(index > taketestManager.getQuestionCount() - 1 ? Color.gray : blueBtn)
                 .cornerRadius(10)
                 .foregroundColor(.white)
             }).disabled(index == taketestManager.getQuestionCount() - 1)

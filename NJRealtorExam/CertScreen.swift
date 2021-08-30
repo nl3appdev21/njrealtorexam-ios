@@ -42,7 +42,6 @@ struct CertScreen: View {
             
             Button(action: {
                 gotoMenu()
-                print("goto menu screen")
             }, label: {
                 Text("< BACK <")
                     .padding(7)
@@ -61,7 +60,6 @@ struct CertScreen: View {
             
             Button(action: {
                 gotoTakeTest()
-                print("goto taketest screen")
             }, label: {
                 Text("goto menu")
                     .padding(7)
@@ -74,7 +72,6 @@ struct CertScreen: View {
             
             Button(action: {
                 gotoLeaderboard()
-                print("goto submit screen")
             }, label: {
                 Text("goto submit")
                     .padding(7)

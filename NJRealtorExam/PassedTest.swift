@@ -35,7 +35,6 @@ struct PassedTest: View {
             
             Button(action: {
                 gotoMenu()
-                print("goto menu screen")
             }, label: {
                 Text("< BACK <")
                     .padding(7)
@@ -54,7 +53,6 @@ struct PassedTest: View {
             
             Button(action: {
                 gotoMenu()
-                print("goto menu screen")
             }, label: {
                 Text("goto menu")
                     .padding(7)
@@ -67,7 +65,6 @@ struct PassedTest: View {
             
             Button(action: {
                 gotoTakeTest()
-                print("goto taketest screen")
             }, label: {
                 Text("goto taketest")
                     .padding(7)

@@ -21,7 +21,6 @@ public class LoadJsonData {
                 let data = try Data(contentsOf: fileLocation)
                 let jsonDecoder = JSONDecoder()
                 let dataFromJson = try jsonDecoder.decode([ExamItem].self, from: data)
-                // print("load the json file")
                 self.examItem = dataFromJson
             } catch {
                 print(error)

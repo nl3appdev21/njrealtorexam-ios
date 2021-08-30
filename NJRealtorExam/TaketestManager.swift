@@ -24,7 +24,6 @@ public class TaketestManager {
         if(isCorrect){
             correctCount+=1
         }
-        print(correctCount)
         return isCorrect
     }
     

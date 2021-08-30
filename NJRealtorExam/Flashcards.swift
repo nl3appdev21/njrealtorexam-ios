@@ -45,7 +45,6 @@ struct Flashcards: View {
         flashcardcount = updateCardCount()
         ans = 0
         details = 0
-        //  ??  print(flashcardManager.getAnsNum())
     }
     
     func showAnswer() {
@@ -58,14 +57,11 @@ struct Flashcards: View {
             ansbtn = flashcardManager.getCorrectAnswers()
             ans = 1
         }
-        print(flashcardManager.getAnsNum())
-        print(" is the correct answer ")
     }
     
     func showDetails() {
         if details == 1 {
             ansdetails  = flashcardManager.getAnswerDetails()
-            //  details = 0 or 1
         }
     }
     
