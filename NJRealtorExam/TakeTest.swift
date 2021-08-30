@@ -17,6 +17,7 @@ struct TakeTest: View {
     @State var correctCount:Int = 0
     @State var ansbtn: String = " "
     @State var btnClicked:Int = -1
+    @State var isCorrect: Bool = false
     
     let theGold = Image("goldwinner")
     let rightBtn = Color.green
@@ -30,7 +31,7 @@ struct TakeTest: View {
     }
     
     func checkAnswer(index:Int) {
-        let isCorrect = taketestManager.submitAnswer(index: index)
+        isCorrect = taketestManager.submitAnswer(index: index)
         correctCount = taketestManager.correctCount
         ansnum = taketestManager.getAnsNum()
         btnClicked = index
@@ -82,7 +83,7 @@ struct TakeTest: View {
             .border(Color.black, width: 5)
 
             GeometryReader { geo in
-                Image(taketestManager.getCategory())
+                Image(ansnum > -1 ? (!isCorrect ? "redxbtn" : "goldbulb") : taketestManager.getCategory())
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .padding(21)
