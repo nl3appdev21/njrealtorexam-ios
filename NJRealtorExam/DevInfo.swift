@@ -65,11 +65,12 @@ struct DevInfo: View {
                 Text("NJ Real Estate Exam")
                 Text(" ")
                 
-                Text("For support email:")
-                Text("Nash@NL3Solutions.com")
-                Text(" ")
+                // Text("For support email:")
+                // Link("For support email:", destination: URL(string: "mailto:		pghskip@aol.com")!)
+                // Text("Nash@NL3Solutions.com")
+                // Text(" ")
+                
                 Link("Visit: NL3Solutions website", destination: URL(string: "https://www.NL3Solutions.com")!)
-                // Link("www.NL3Solutions.com", destination: URL(string: "https://www.NL3Solutions.com")!)
                     .font(.system(size: 19))
                     .foregroundColor(.blue)
                 Text(" ")
