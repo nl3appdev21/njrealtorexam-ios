@@ -10,6 +10,9 @@ import SwiftUI
 import UIKit
 
 struct CertScreen: View {
+    @State private var name1: String = "You are a winner"
+    @State private var name2: String = "delete text & enter your name"
+    
     let greenBtn = Color(red: 76.0/255, green: 84.0/255, blue: 75.0/255)
     let blueBtn = Color(red: 53.0/255, green: 180.0/255, blue: 230.0/255)
     
@@ -46,7 +49,25 @@ struct CertScreen: View {
                     .frame(width: geo.size.width)
                     .background(Color.gray)
             }
+                       
+            Text("\(name1)!")
+                .font(.system(size: 20))
+                .bold()
+                .padding(8)
+                .frame(maxWidth: .infinity, alignment: .center)
+                .foregroundColor(.white)
+                
+            TextField("", text: $name2)
+                .font(.system(size: 20))
+                .padding(8)
+                .frame(maxWidth: .infinity, alignment: .center)
+                // .background(Color.white)
+                .foregroundColor(.white)
             
+            Text(" ")
+            Text(" ")
+            Text(" ")
+                
             HStack{
                 
                 Button(action: {
@@ -65,7 +86,7 @@ struct CertScreen: View {
                 Button(action: {
                     gotoLeaderboard()
                 }, label: {
-                    Text("add name 2 lb")
+                    Text("submit name 2 LB")
                         .font(.system(size: 20))
                         .bold()
                         .padding(8)
