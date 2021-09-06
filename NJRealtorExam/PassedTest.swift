@@ -47,7 +47,7 @@ struct PassedTest: View {
                 .background(Color.gray)
         }
         
-        VStack{
+        HStack{
             
             Button(action: {
                 gotoMenu()
@@ -62,6 +62,8 @@ struct PassedTest: View {
                     .cornerRadius(10)
             }).padding(8)
             
+            /*
+            
             Button(action: {
                 gotoTakeTest()
             }, label: {
@@ -74,6 +76,8 @@ struct PassedTest: View {
                     .foregroundColor(.white)
                     .cornerRadius(10)
             }).padding(8)
+            
+            */
             
             Button(action: {
                 gotoCertScreen()

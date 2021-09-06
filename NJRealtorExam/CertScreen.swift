@@ -29,7 +29,7 @@ struct CertScreen: View {
     
     func gotoLeaderboard() {
         if let window = UIApplication.shared.windows.first {
-            // window.rootViewController = UIHostingController(rootView: Leaderboard())
+            window.rootViewController = UIHostingController(rootView: Leaderboard())
             window.makeKeyAndVisible()
         }
     }
@@ -47,7 +47,7 @@ struct CertScreen: View {
                     .background(Color.gray)
             }
             
-            VStack{
+            HStack{
                 
                 Button(action: {
                     gotoMenu()
@@ -63,22 +63,9 @@ struct CertScreen: View {
                 }).padding(8)
                 
                 Button(action: {
-                    gotoTakeTest()
-                }, label: {
-                    Text("goto taketest")
-                        .font(.system(size: 20))
-                        .bold()
-                        .padding(8)
-                        .frame(maxWidth: .infinity, alignment: .center)
-                        .background(blueBtn)
-                        .foregroundColor(.white)
-                        .cornerRadius(10)
-                }).padding(8)
-                
-                Button(action: {
                     gotoLeaderboard()
                 }, label: {
-                    Text("goto submit")
+                    Text("add name 2 lb")
                         .font(.system(size: 20))
                         .bold()
                         .padding(8)
