@@ -11,7 +11,7 @@ import UIKit
 
 struct CertScreen: View {
     @State private var name1: String = "You are a winner"
-    @State private var name2: String = "delete text & enter your name"
+    @State private var name2: String = "enter your name here"
     
     let greenBtn = Color(red: 76.0/255, green: 84.0/255, blue: 75.0/255)
     let blueBtn = Color(red: 53.0/255, green: 180.0/255, blue: 230.0/255)
