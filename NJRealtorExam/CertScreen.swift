@@ -11,7 +11,8 @@ import UIKit
 
 struct CertScreen: View {
     let greenBtn = Color(red: 76.0/255, green: 84.0/255, blue: 75.0/255)
-
+    let blueBtn = Color(red: 53.0/255, green: 180.0/255, blue: 230.0/255)
+    
     func gotoMenu() {
         if let window = UIApplication.shared.windows.first {
             window.rootViewController = UIHostingController(rootView: Menu())
@@ -33,53 +34,62 @@ struct CertScreen: View {
         }
     }
 
-    var body: some View {
-        
-        // place background image here !!
-        // place background image here !!
-        
-        VStack(alignment: .leading, spacing: 0){
+        var body: some View {
             
-            Button(action: {
-                gotoMenu()
-            }, label: {
-                Text("< BACK <")
-                    .padding(7)
-                    .font(.system(size: 16))
-                    .background(greenBtn)
-                    .foregroundColor(.white)
-            })
+            Group{
             
-            Text(" ")
+            GeometryReader { geo in
+                Image("bluecert")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .padding(21)
+                    .frame(width: geo.size.width)
+                    .background(Color.gray)
+            }
             
-            Text("this is the certscreen man !!")
-            Text("this is the certscreen man !!")
-            Text(" ")
-            Text("place background image here !!")
-            Text(" ")
-            
-            Button(action: {
-                gotoTakeTest()
-            }, label: {
-                Text("goto menu")
-                    .padding(7)
-                    .font(.system(size: 16))
-                    .background(greenBtn)
-                    .foregroundColor(.white)
-            })
-            
-            Text(" ")
-            
-            Button(action: {
-                gotoLeaderboard()
-            }, label: {
-                Text("goto submit")
-                    .padding(7)
-                    .font(.system(size: 16))
-                    .background(greenBtn)
-                    .foregroundColor(.white)
-            })
-            
+            VStack{
+                
+                Button(action: {
+                    gotoMenu()
+                }, label: {
+                    Text("goto menu")
+                        .font(.system(size: 20))
+                        .bold()
+                        .padding(8)
+                        .frame(maxWidth: .infinity, alignment: .center)
+                        .background(blueBtn)
+                        .foregroundColor(.white)
+                        .cornerRadius(10)
+                }).padding(8)
+                
+                Button(action: {
+                    gotoTakeTest()
+                }, label: {
+                    Text("goto taketest")
+                        .font(.system(size: 20))
+                        .bold()
+                        .padding(8)
+                        .frame(maxWidth: .infinity, alignment: .center)
+                        .background(blueBtn)
+                        .foregroundColor(.white)
+                        .cornerRadius(10)
+                }).padding(8)
+                
+                Button(action: {
+                    gotoLeaderboard()
+                }, label: {
+                    Text("goto submit")
+                        .font(.system(size: 20))
+                        .bold()
+                        .padding(8)
+                        .frame(maxWidth: .infinity, alignment: .center)
+                        .background(blueBtn)
+                        .foregroundColor(.white)
+                        .cornerRadius(10)
+                }).padding(8)
+
         }
-    }
-}
+            }.frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .topLeading)
+                    .background(Color.gray)
+            }
+        }

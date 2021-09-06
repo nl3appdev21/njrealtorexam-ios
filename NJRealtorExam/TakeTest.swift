@@ -18,6 +18,7 @@ struct TakeTest: View {
     @State var ansbtn: String = " "
     @State var btnClicked:Int = -1
     @State var isCorrect: Bool = false
+    @State var myQuestionCount:Int = 0
     
     let theGold = Image("goldwinner")
     let rightBtn = Color.green
@@ -38,6 +39,15 @@ struct TakeTest: View {
         if(isCorrect){
             ansCorrect = index
         }
+        //  ????????  print(self.index)
+        if self.index == (taketestManager.getQuestionCount() - 1){
+            //  ????????  print("the end is here")
+            if correctCount > 4 {
+                gotoPassedTest()
+            }else{
+                gotoFailedTest()
+            }
+        }
     }
 
     func gotoMenu() {
@@ -55,6 +65,20 @@ struct TakeTest: View {
     func updateQuestionCount() -> String {
         let count = String(index + 1) + " / " + String(taketestManager.getQuestionCount()) + " Questions "
         return count
+    }
+    
+    func gotoPassedTest() {
+        if let window = UIApplication.shared.windows.first {
+            window.rootViewController = UIHostingController(rootView: PassedTest())
+            window.makeKeyAndVisible()
+        }
+    }
+    
+    func gotoFailedTest() {
+        if let window = UIApplication.shared.windows.first {
+            window.rootViewController = UIHostingController(rootView: FailedTest())
+            window.makeKeyAndVisible()
+        }
     }
 
     var body: some View {

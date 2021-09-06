@@ -11,6 +11,7 @@ import UIKit
 
 struct PassedTest: View {
     let greenBtn = Color(red: 76.0/255, green: 84.0/255, blue: 75.0/255)
+    let blueBtn = Color(red: 53.0/255, green: 180.0/255, blue: 230.0/255)
     
     func gotoMenu() {
         if let window = UIApplication.shared.windows.first {
@@ -25,54 +26,70 @@ struct PassedTest: View {
             window.makeKeyAndVisible()
         }
     }
+    
+    func gotoCertScreen() {
+        if let window = UIApplication.shared.windows.first {
+            window.rootViewController = UIHostingController(rootView: CertScreen())
+            window.makeKeyAndVisible()
+        }
+    }
 
     var body: some View {
         
-        // place background image here !!
-        // place background image here !!
+        Group{
         
-        VStack(alignment: .leading, spacing: 0){
-            
-            Button(action: {
-                gotoMenu()
-            }, label: {
-                Text("< BACK <")
-                    .padding(7)
-                    .font(.system(size: 16))
-                    .background(greenBtn)
-                    .foregroundColor(.white)
-            })
-            
-            Text(" ")
-            
-            Text("this is the passedtest screen man !!")
-            Text("this is the passedtest screen man !!")
-            Text(" ")
-            Text("place background image here !!")
-            Text(" ")
+        GeometryReader { geo in
+            Image("gate11")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .padding(21)
+                .frame(width: geo.size.width)
+                .background(Color.gray)
+        }
+        
+        VStack{
             
             Button(action: {
                 gotoMenu()
             }, label: {
                 Text("goto menu")
-                    .padding(7)
-                    .font(.system(size: 16))
-                    .background(greenBtn)
+                    .font(.system(size: 20))
+                    .bold()
+                    .padding(8)
+                    .frame(maxWidth: .infinity, alignment: .center)
+                    .background(blueBtn)
                     .foregroundColor(.white)
-            })
-            
-            Text(" ")
+                    .cornerRadius(10)
+            }).padding(8)
             
             Button(action: {
                 gotoTakeTest()
             }, label: {
                 Text("goto taketest")
-                    .padding(7)
-                    .font(.system(size: 16))
-                    .background(greenBtn)
+                    .font(.system(size: 20))
+                    .bold()
+                    .padding(8)
+                    .frame(maxWidth: .infinity, alignment: .center)
+                    .background(blueBtn)
                     .foregroundColor(.white)
-            })
+                    .cornerRadius(10)
+            }).padding(8)
             
+            Button(action: {
+                gotoCertScreen()
+            }, label: {
+                Text("goto cert screen")
+                    .font(.system(size: 20))
+                    .bold()
+                    .padding(8)
+                    .frame(maxWidth: .infinity, alignment: .center)
+                    .background(blueBtn)
+                    .foregroundColor(.white)
+                    .cornerRadius(10)
+            }).padding(8)
+
+    }
+        }.frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .topLeading)
+                .background(Color.gray)
         }
     }
-}
