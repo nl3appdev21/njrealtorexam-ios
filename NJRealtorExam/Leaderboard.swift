@@ -31,6 +31,14 @@ struct Leaderboard: View {
                 .frame(maxWidth: .infinity, alignment: .center)
                 .foregroundColor(.white)
             
+            Image("bronzewinner")
+            
+            Text(" ")
+            Image("silverwinner")
+            
+            Text(" ")
+            Image("goldwinner")
+        
             Spacer()
                 
             HStack {

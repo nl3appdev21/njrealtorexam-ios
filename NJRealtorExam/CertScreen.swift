@@ -96,8 +96,8 @@ struct CertScreen: View {
                         .cornerRadius(10)
                 }).padding(8)
 
-        }
-            }.frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .topLeading)
-                    .background(Color.gray)
             }
-        }
+        }.frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .topLeading)
+         .background(Color.gray)
+    }
+}
