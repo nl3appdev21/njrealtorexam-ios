@@ -63,6 +63,9 @@ struct CertScreen: View {
                 .frame(maxWidth: .infinity, alignment: .center)
                 // .background(Color.white)
                 .foregroundColor(.white)
+                .onReceive(winner.publisher.collect()) {
+                    self.winner = String($0.prefix(21))
+                }
             
             Text(" ")
             Text(" ")
