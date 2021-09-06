@@ -11,7 +11,7 @@ import UIKit
 
 struct CertScreen: View {
     @State private var name1: String = "You are a winner"
-    @State private var name2: String = "enter your name here"
+    @State private var winner: String = ""
     
     let greenBtn = Color(red: 76.0/255, green: 84.0/255, blue: 75.0/255)
     let blueBtn = Color(red: 53.0/255, green: 180.0/255, blue: 230.0/255)
@@ -50,14 +50,14 @@ struct CertScreen: View {
                     .background(Color.gray)
             }
                        
-            Text("\(name1)!")
+            Text("\(name1) !")
                 .font(.system(size: 20))
                 .bold()
                 .padding(8)
                 .frame(maxWidth: .infinity, alignment: .center)
                 .foregroundColor(.white)
                 
-            TextField("", text: $name2)
+            TextField("Enter your name", text: $winner)
                 .font(.system(size: 20))
                 .padding(8)
                 .frame(maxWidth: .infinity, alignment: .center)
