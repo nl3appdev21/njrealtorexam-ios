@@ -18,6 +18,7 @@ struct TakeTest: View {
     @State var ansbtn: String = " "
     @State var btnClicked:Int = -1
     @State var isCorrect: Bool = false
+    @State var isDisabled: Bool = false
     @State var myQuestionCount:Int = 0
     
     let theGold = Image("goldwinner")
@@ -33,15 +34,15 @@ struct TakeTest: View {
     
     func checkAnswer(index:Int) {
         isCorrect = taketestManager.submitAnswer(index: index)
+        isDisabled = true
         correctCount = taketestManager.correctCount
         ansnum = taketestManager.getAnsNum()
         btnClicked = index
         if(isCorrect){
             ansCorrect = index
         }
-        //  ????????  print(self.index)
+
         if self.index == (taketestManager.getQuestionCount() - 1){
-            //  ????????  print("the end is here")
             if correctCount > 4 {
                 gotoPassedTest()
             }else{
@@ -63,8 +64,10 @@ struct TakeTest: View {
     }
     
     func updateQuestionCount() -> String {
+        isDisabled = false
         let count = String(index + 1) + " / " + String(taketestManager.getQuestionCount()) + " Questions "
         return count
+        
     }
     
     func gotoPassedTest() {
@@ -134,7 +137,8 @@ struct TakeTest: View {
                         // .background(blueBtn)
                         .background(ansnum > -1 ? (ansnum == 0 ? rightBtn: btnClicked == 0 ? wrongBtn: blueBtn) : blueBtn)
                         .foregroundColor(.white)
-                    })
+                        .disabled(isDisabled)
+                }) .disabled(isDisabled)
                 Text("")
                 
                 Button(action: {
@@ -147,7 +151,8 @@ struct TakeTest: View {
                         .frame(maxWidth: .infinity, alignment: .topLeading)
                         .background(ansnum > -1 ? (ansnum == 1 ? rightBtn: btnClicked == 1 ? wrongBtn: blueBtn) : blueBtn)
                         .foregroundColor(.white)
-                }) // .padding(.leading,10) // ?? use to add padding to sides of textbox or buttons
+                        
+                }) .disabled(isDisabled)
         
                 Text("")
                 
@@ -161,7 +166,8 @@ struct TakeTest: View {
                         .frame(maxWidth: .infinity, alignment: .topLeading)
                         .background(ansnum > -1 ? (ansnum == 2 ? rightBtn: btnClicked == 2 ? wrongBtn: blueBtn) : blueBtn)
                         .foregroundColor(.white)
-                }) // .padding(.leading,10) // ?? use to add padding to sides of textbox or buttons
+                        .disabled(isDisabled)
+                }) .disabled(isDisabled)
         
                 Text("")
                 
@@ -175,7 +181,9 @@ struct TakeTest: View {
                         .frame(maxWidth: .infinity, alignment: .topLeading)
                         .background(ansnum > -1 ? (ansnum == 3 ? rightBtn: btnClicked == 3 ? wrongBtn: blueBtn) : blueBtn)
                         .foregroundColor(.white)
-                }) // .padding(.leading,10) // ?? use to add padding to sides of textbox or buttons
+                        .disabled(isDisabled)
+                }) .disabled(isDisabled)
+                
                 Text("")
                 
             }
