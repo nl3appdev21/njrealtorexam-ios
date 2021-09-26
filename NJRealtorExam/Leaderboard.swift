@@ -31,13 +31,36 @@ struct Leaderboard: View {
                 .frame(maxWidth: .infinity, alignment: .center)
                 .foregroundColor(.white)
             
-            Image("bronzewinner")
+            // Image("bronzewinner")
+            GeometryReader { geo in
+                Image("bronze0")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    //.padding(21)
+                    .frame(width: geo.size.width)
+            }
             
-            Text(" ")
-            Image("silverwinner")
+            // Text(" ")
+            // Image("silverwinner")
+            GeometryReader { geo in
+                Image("silver0")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    //.padding(21)
+                    .frame(width: geo.size.width)
+            }
+                
             
-            Text(" ")
-            Image("goldwinner")
+            // Text(" ")
+            // Image("goldwinner")
+            GeometryReader { geo in
+                Image("gold0")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    //.padding(21)
+                    .frame(width: geo.size.width)
+            }
+                
         
             Spacer()
                 
