@@ -31,39 +31,42 @@ struct Leaderboard: View {
                 .frame(maxWidth: .infinity, alignment: .center)
                 .foregroundColor(.white)
             
-            // Image("bronzewinner")
-            GeometryReader { geo in
-                Image("bronze0")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    //.padding(21)
-                    .frame(width: geo.size.width)
-            }
-            
-            // Text(" ")
-            // Image("silverwinner")
-            GeometryReader { geo in
-                Image("silver0")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    //.padding(21)
-                    .frame(width: geo.size.width)
-            }
+            Group{
+  
+                ZStack {
+                    Image("gold0")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                    Text("               " + "Nash Nash Ingram1")
+                        .font(.system(size: 21))
+                        .foregroundColor(.white)
+                        .frame(maxWidth: .infinity, alignment: .center)
+                }
                 
-            
-            // Text(" ")
-            // Image("goldwinner")
-            GeometryReader { geo in
-                Image("gold0")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    //.padding(21)
-                    .frame(width: geo.size.width)
-            }
+                ZStack {
+                    Image("silver0")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                    Text("               " + "Nash Nash Ingram1")
+                        .font(.system(size: 21))
+                        .foregroundColor(.white)
+                        .frame(maxWidth: .infinity, alignment: .center)
+                }
                 
+                ZStack {
+                    Image("bronze0")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                    Text("               " + "Nash Nash Ingram1")
+                        .font(.system(size: 21))
+                        .foregroundColor(.white)
+                        .frame(maxWidth: .infinity, alignment: .center)
+                }
         
+            }
+              
             Spacer()
-                
+            
             HStack {
             
             Button(action: {
