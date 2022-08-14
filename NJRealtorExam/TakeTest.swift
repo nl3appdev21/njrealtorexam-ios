@@ -44,7 +44,8 @@ struct TakeTest: View {
 
         if self.index == (taketestManager.getQuestionCount() - 1){
             if correctCount > 4 {
-                gotoPassedTest()
+                // gotoPassedTest()
+                gotoCertScreen()
             }else{
                 gotoFailedTest()
             }
@@ -70,6 +71,13 @@ struct TakeTest: View {
         
     }
     
+    func gotoCertScreen() {
+        if let window = UIApplication.shared.windows.first {
+            window.rootViewController = UIHostingController(rootView: CertScreen())
+            window.makeKeyAndVisible()
+        }
+    }
+    
     func gotoPassedTest() {
         if let window = UIApplication.shared.windows.first {
             window.rootViewController = UIHostingController(rootView: PassedTest())
@@ -88,7 +96,7 @@ struct TakeTest: View {
         
         VStack(alignment: .leading, spacing: 0){
             
-            Text((questioncount) + ("   ***   Correct  ") + String(correctCount))
+            Text((questioncount) + ("         Correct  ") + String(correctCount))
                 .font(.system(size: 17))
                 .bold()
                 .padding(10)

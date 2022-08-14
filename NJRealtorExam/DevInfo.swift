@@ -58,7 +58,7 @@ struct DevInfo: View {
             
             VStack{
                 
-                Text("Copyright @ 2019 - 2021")
+                Text("Copyright @ 2019 - 2022")
                 Text(" ")
                 
                 Text("NL3 Solutions")

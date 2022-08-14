@@ -49,7 +49,10 @@ struct CertScreen: View {
                     .frame(width: geo.size.width)
                     .background(Color.gray)
             }
-                       
+            
+                
+            /*
+             
             Text("\(name1) !")
                 .font(.system(size: 20))
                 .bold()
@@ -67,6 +70,9 @@ struct CertScreen: View {
                     self.winner = String($0.prefix(21))
                 }
             
+            */
+                
+                
             Text(" ")
             Text(" ")
             Text(" ")
@@ -98,6 +104,7 @@ struct CertScreen: View {
                         .foregroundColor(.white)
                         .cornerRadius(10)
                 }).padding(8)
+                  .hidden()
 
             }
         }.frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .topLeading)

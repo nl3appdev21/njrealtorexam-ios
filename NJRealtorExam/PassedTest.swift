@@ -91,6 +91,7 @@ struct PassedTest: View {
                     .foregroundColor(.white)
                     .cornerRadius(10)
             }).padding(8)
+              .hidden()
 
     }
         }.frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .topLeading)

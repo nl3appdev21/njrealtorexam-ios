@@ -137,6 +137,7 @@ struct Menu: View {
                     .foregroundColor(.white)
                     .cornerRadius(10)
             }).padding(8)
+              .hidden()
             
             Button(action: {
                 gotoSettings()
@@ -150,6 +151,7 @@ struct Menu: View {
                     .foregroundColor(.white)
                     .cornerRadius(10)
             }).padding(8)
+              .hidden()
             
             Spacer()
             
