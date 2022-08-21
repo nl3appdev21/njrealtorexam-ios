@@ -38,6 +38,38 @@ struct AppInstructions: View {
                 .frame(maxWidth: .infinity, alignment: .center)
             
             Spacer()
+            
+            
+            VStack {
+            
+            Button(action: {
+                gotoMenu()
+            }, label: {
+            Text("bnt 01")
+                .font(.system(size: 20))
+                .bold()
+                .padding(8)
+                .frame(maxWidth: .infinity, alignment: .center)
+                .background(blueBtn)
+                .foregroundColor(.white)
+                .cornerRadius(10)
+            }).padding(8)
+                
+                Button(action: {
+                    gotoMenu()
+                }, label: {
+                Text("bnt 02")
+                    .font(.system(size: 20))
+                    .bold()
+                    .padding(8)
+                    .frame(maxWidth: .infinity, alignment: .center)
+                    .background(blueBtn)
+                    .foregroundColor(.white)
+                    .cornerRadius(10)
+                }).padding(8)
+                
+          }
+            
                 
             HStack {
             

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE0C0F3D28B29D1A004D7AA8 /* FlashcardsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0C0F3C28B29D1A004D7AA8 /* FlashcardsScreen.swift */; };
 		CE0CADDA26B6657B0044D010 /* njrealtorexam_12.json in Resources */ = {isa = PBXBuildFile; fileRef = CE0CADD926B6657B0044D010 /* njrealtorexam_12.json */; };
 		CE0CADDC26B6658E0044D010 /* njrealtorexam_21.json in Resources */ = {isa = PBXBuildFile; fileRef = CE0CADDB26B6658E0044D010 /* njrealtorexam_21.json */; };
 		CE0CADDE26B665A20044D010 /* njrealtorexam_32.json in Resources */ = {isa = PBXBuildFile; fileRef = CE0CADDD26B665A20044D010 /* njrealtorexam_32.json */; };
@@ -18,7 +19,6 @@
 		CE97D7AC26ADE0DA008688E2 /* NJRealtorExamApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE97D7AB26ADE0DA008688E2 /* NJRealtorExamApp.swift */; };
 		CE97D7AE26ADE0DA008688E2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE97D7AD26ADE0DA008688E2 /* ContentView.swift */; };
 		CE97D7B026ADE0DD008688E2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE97D7AF26ADE0DD008688E2 /* Assets.xcassets */; };
-		CE97D7B326ADE0DD008688E2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE97D7B226ADE0DD008688E2 /* Preview Assets.xcassets */; };
 		CE97D7BE26ADE0DD008688E2 /* NJRealtorExamTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE97D7BD26ADE0DD008688E2 /* NJRealtorExamTests.swift */; };
 		CE97D7C926ADE0DD008688E2 /* NJRealtorExamUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE97D7C826ADE0DD008688E2 /* NJRealtorExamUITests.swift */; };
 		CE97D7D726ADE2F4008688E2 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE97D7D626ADE2F4008688E2 /* SplashView.swift */; };
@@ -53,6 +53,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CE0C0F3428B2987E004D7AA8 /* devinfovideo6.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = devinfovideo6.mp4; sourceTree = "<group>"; };
+		CE0C0F3528B298C4004D7AA8 /* flashcardvideo3.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = flashcardvideo3.mp4; sourceTree = "<group>"; };
+		CE0C0F3628B298F4004D7AA8 /* lbvideo4.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = lbvideo4.mp4; sourceTree = "<group>"; };
+		CE0C0F3728B29909004D7AA8 /* menuvideo2.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = menuvideo2.mp4; sourceTree = "<group>"; };
+		CE0C0F3828B29925004D7AA8 /* settingsvideo5.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = settingsvideo5.mp4; sourceTree = "<group>"; };
+		CE0C0F3928B29932004D7AA8 /* splashvideo1.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = splashvideo1.mp4; sourceTree = "<group>"; };
+		CE0C0F3A28B29959004D7AA8 /* strokefore.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = strokefore.mp4; sourceTree = "<group>"; };
+		CE0C0F3C28B29D1A004D7AA8 /* FlashcardsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashcardsScreen.swift; sourceTree = "<group>"; };
 		CE0CADD926B6657B0044D010 /* njrealtorexam_12.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = njrealtorexam_12.json; sourceTree = "<group>"; };
 		CE0CADDB26B6658E0044D010 /* njrealtorexam_21.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = njrealtorexam_21.json; sourceTree = "<group>"; };
 		CE0CADDD26B665A20044D010 /* njrealtorexam_32.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = njrealtorexam_32.json; sourceTree = "<group>"; };
@@ -65,7 +73,6 @@
 		CE97D7AB26ADE0DA008688E2 /* NJRealtorExamApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NJRealtorExamApp.swift; sourceTree = "<group>"; };
 		CE97D7AD26ADE0DA008688E2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		CE97D7AF26ADE0DD008688E2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		CE97D7B226ADE0DD008688E2 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		CE97D7B426ADE0DD008688E2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE97D7B926ADE0DD008688E2 /* NJRealtorExamTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NJRealtorExamTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE97D7BD26ADE0DD008688E2 /* NJRealtorExamTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NJRealtorExamTests.swift; sourceTree = "<group>"; };
@@ -135,6 +142,13 @@
 		CE97D7AA26ADE0DA008688E2 /* NJRealtorExam */ = {
 			isa = PBXGroup;
 			children = (
+				CE0C0F3A28B29959004D7AA8 /* strokefore.mp4 */,
+				CE0C0F3928B29932004D7AA8 /* splashvideo1.mp4 */,
+				CE0C0F3828B29925004D7AA8 /* settingsvideo5.mp4 */,
+				CE0C0F3728B29909004D7AA8 /* menuvideo2.mp4 */,
+				CE0C0F3628B298F4004D7AA8 /* lbvideo4.mp4 */,
+				CE0C0F3528B298C4004D7AA8 /* flashcardvideo3.mp4 */,
+				CE0C0F3428B2987E004D7AA8 /* devinfovideo6.mp4 */,
 				CE0CADD926B6657B0044D010 /* njrealtorexam_12.json */,
 				CE0CADE526B700230044D010 /* njrealtorexam_12a.json */,
 				CE0CADDB26B6658E0044D010 /* njrealtorexam_21.json */,
@@ -167,7 +181,7 @@
 		CE97D7B126ADE0DD008688E2 /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
-				CE97D7B226ADE0DD008688E2 /* Preview Assets.xcassets */,
+				CE0C0F3C28B29D1A004D7AA8 /* FlashcardsScreen.swift */,
 			);
 			path = "Preview Content";
 			sourceTree = "<group>";
@@ -293,7 +307,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CE97D7B326ADE0DD008688E2 /* Preview Assets.xcassets in Resources */,
 				CE0CADDA26B6657B0044D010 /* njrealtorexam_12.json in Resources */,
 				CE0CADE026B665BF0044D010 /* njrealtorexam_42.json in Resources */,
 				CE0CADDE26B665A20044D010 /* njrealtorexam_32.json in Resources */,
@@ -326,6 +339,7 @@
 			files = (
 				CE97D7AE26ADE0DA008688E2 /* ContentView.swift in Sources */,
 				CE97D7E326AE0CDA008688E2 /* Leaderboard.swift in Sources */,
+				CE0C0F3D28B29D1A004D7AA8 /* FlashcardsScreen.swift in Sources */,
 				CE97D7E126AE0BAA008688E2 /* TakeTest.swift in Sources */,
 				CE97D7AC26ADE0DA008688E2 /* NJRealtorExamApp.swift in Sources */,
 				CEB4B31426C0B0ED00253176 /* FlashcardManager.swift in Sources */,
