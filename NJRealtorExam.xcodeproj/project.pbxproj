@@ -156,6 +156,7 @@
 				CE0CADDF26B665BF0044D010 /* njrealtorexam_42.json */,
 				CE97D7AB26ADE0DA008688E2 /* NJRealtorExamApp.swift */,
 				CE97D7AD26ADE0DA008688E2 /* ContentView.swift */,
+				CE0C0F3C28B29D1A004D7AA8 /* FlashcardsScreen.swift */,
 				CE97D7AF26ADE0DD008688E2 /* Assets.xcassets */,
 				CE97D7B426ADE0DD008688E2 /* Info.plist */,
 				CE97D7B126ADE0DD008688E2 /* Preview Content */,
@@ -181,7 +182,6 @@
 		CE97D7B126ADE0DD008688E2 /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
-				CE0C0F3C28B29D1A004D7AA8 /* FlashcardsScreen.swift */,
 			);
 			path = "Preview Content";
 			sourceTree = "<group>";
