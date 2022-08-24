@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		CE0C0F3D28B29D1A004D7AA8 /* FlashcardsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0C0F3C28B29D1A004D7AA8 /* FlashcardsScreen.swift */; };
+		CE0C0F4128B5D930004D7AA8 /* FlashcardVideo.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0C0F4028B5D930004D7AA8 /* FlashcardVideo.swift */; };
 		CE0CADDA26B6657B0044D010 /* njrealtorexam_12.json in Resources */ = {isa = PBXBuildFile; fileRef = CE0CADD926B6657B0044D010 /* njrealtorexam_12.json */; };
 		CE0CADDC26B6658E0044D010 /* njrealtorexam_21.json in Resources */ = {isa = PBXBuildFile; fileRef = CE0CADDB26B6658E0044D010 /* njrealtorexam_21.json */; };
 		CE0CADDE26B665A20044D010 /* njrealtorexam_32.json in Resources */ = {isa = PBXBuildFile; fileRef = CE0CADDD26B665A20044D010 /* njrealtorexam_32.json */; };
@@ -61,6 +62,7 @@
 		CE0C0F3928B29932004D7AA8 /* splashvideo1.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = splashvideo1.mp4; sourceTree = "<group>"; };
 		CE0C0F3A28B29959004D7AA8 /* strokefore.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = strokefore.mp4; sourceTree = "<group>"; };
 		CE0C0F3C28B29D1A004D7AA8 /* FlashcardsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashcardsScreen.swift; sourceTree = "<group>"; };
+		CE0C0F4028B5D930004D7AA8 /* FlashcardVideo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashcardVideo.swift; sourceTree = "<group>"; };
 		CE0CADD926B6657B0044D010 /* njrealtorexam_12.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = njrealtorexam_12.json; sourceTree = "<group>"; };
 		CE0CADDB26B6658E0044D010 /* njrealtorexam_21.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = njrealtorexam_21.json; sourceTree = "<group>"; };
 		CE0CADDD26B665A20044D010 /* njrealtorexam_32.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = njrealtorexam_32.json; sourceTree = "<group>"; };
@@ -157,6 +159,7 @@
 				CE97D7AB26ADE0DA008688E2 /* NJRealtorExamApp.swift */,
 				CE97D7AD26ADE0DA008688E2 /* ContentView.swift */,
 				CE0C0F3C28B29D1A004D7AA8 /* FlashcardsScreen.swift */,
+				CE0C0F4028B5D930004D7AA8 /* FlashcardVideo.swift */,
 				CE97D7AF26ADE0DD008688E2 /* Assets.xcassets */,
 				CE97D7B426ADE0DD008688E2 /* Info.plist */,
 				CE97D7B126ADE0DD008688E2 /* Preview Content */,
@@ -349,6 +352,7 @@
 				CE6191CA26D2F9B600096C12 /* TaketestManager.swift in Sources */,
 				CE97D7E526AE0D73008688E2 /* Settings.swift in Sources */,
 				CE97D7E926AE0E9C008688E2 /* PassedTest.swift in Sources */,
+				CE0C0F4128B5D930004D7AA8 /* FlashcardVideo.swift in Sources */,
 				CE97D7EB26AE0F29008688E2 /* FailedTest.swift in Sources */,
 				CE0CADE226B666BE0044D010 /* ExamItem.swift in Sources */,
 				CE97D7E726AE0DE4008688E2 /* DevInfo.swift in Sources */,
