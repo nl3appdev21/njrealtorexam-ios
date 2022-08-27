@@ -7,7 +7,6 @@
 
 import Foundation
 
-
 //
 //  HelpStrokeScreen.swift
 //  Skill Help Stroke Screen
@@ -22,14 +21,21 @@ struct HelpStrokeScreenView: View {
     
     let greenBtn = Color(red: 76.0/255, green: 84.0/255, blue: 75.0/255)
     private let playerStroke = AVPlayer(url:  Bundle.main.url(forResource: "strokefore", withExtension: "mp4")!)
+    private let playerStroke2Way = AVPlayer(url:  Bundle.main.url(forResource: "strokebothways", withExtension: "mp4")!)
     @State var isNavigationBarHidden: Bool = true
     @State var way1BtnVisible = false
+    @State var way2BtnVisible = true
     @State var repeatBtn = true
     
     init() {
         let navBarApperance = UINavigationBarAppearance()
         navBarApperance.titleTextAttributes = [.foregroundColor: UIColor.systemBackground]
         navBarApperance.largeTitleTextAttributes = [.foregroundColor: UIColor.systemBackground]
+        // navBarApperance.shadowColor = .clear
+        // navBarApperance.backgroundColor = UIColor.black
+        // UINavigationBar.appearance().standardAppearance = navBarApperance
+        // UINavigationBar.appearance().compactAppearance = navBarApperance
+        // UINavigationBar.appearance().scrollEdgeAppearance = navBarApperance
         UINavigationBar.appearance().tintColor = UIColor.systemPurple
     }
     
@@ -46,6 +52,27 @@ struct HelpStrokeScreenView: View {
                     .foregroundColor(.white)
                     .bold()
                 Text(" ")
+            
+            VStack{
+                Text("1. Start your stroke slowly.")
+                    .foregroundColor(.white)
+                    .font(.system(size: 15))
+                Text(" ")
+                Text("2. Accelerate smoothly to a strong stop.")
+                    .foregroundColor(.white)
+                    .font(.system(size: 15))
+                Text(" ")
+                Text("3. Listen to the sound you made.")
+                    .foregroundColor(.white)
+                    .font(.system(size: 15))
+                Text(" ")
+                Text("4. Practice until you do it without thinking ")
+                    .foregroundColor(.white)
+                    .font(.system(size: 15))
+                Text(" and it sounds right every time. ")
+                    .foregroundColor(.white)
+                    .font(.system(size: 15))
+            }
                 
                 VStack{
                                     
@@ -54,6 +81,16 @@ struct HelpStrokeScreenView: View {
                         playerStroke.play()
                         }
                 }
+                
+                /*
+                VStack{
+                                    
+                    AVPlayerControllerRepresented4(player: playerStroke2Ways)
+                        .onAppear {
+                        playerStroke2Ways.play()
+                        }
+                }
+                */
                 
             // Spacer()
                 
@@ -66,6 +103,7 @@ struct HelpStrokeScreenView: View {
                             print("way2BtnVisible")
                             print("repeatBtn")
                             way1BtnVisible = false
+                            way2BtnVisible = true
                             repeatBtn = true
                         }) {
                         Text("1-way")
@@ -75,6 +113,7 @@ struct HelpStrokeScreenView: View {
                             .foregroundColor(.white)
                         }
                     }
+                
                     
                     if repeatBtn {
                         Button(action: {  // repeat 1-way
