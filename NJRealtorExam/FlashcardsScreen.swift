@@ -16,7 +16,7 @@ struct FlashcardsScreenView: View {
     let blueBtn = Color(red: 53.0/255, green: 180.0/255, blue: 230.0/255)
     
     let url = URL(string: "https://www.youtube.com/watch?v=QV4_kVIf4V4")! // new
-    private let playerStroke = AVPlayer(url:  Bundle.main.url(forResource: "strokefore", withExtension: "mp4")!)
+    let playerStroke = AVPlayer(url:  Bundle.main.url(forResource: "strokefore", withExtension: "mp4")!)
     
     func gotoMenu() {
         if let window = UIApplication.shared.windows.first {
