@@ -15,8 +15,7 @@ struct FlashcardsScreenView: View {
     let greenBtn = Color(red: 76.0/255, green: 84.0/255, blue: 75.0/255)
     let blueBtn = Color(red: 53.0/255, green: 180.0/255, blue: 230.0/255)
     
-    let url = URL(string: "https://www.youtube.com/watch?v=QV4_kVIf4V4")! // new
-    let playerStroke = AVPlayer(url:  Bundle.main.url(forResource: "strokefore", withExtension: "mp4")!)
+    let playerStroke = AVPlayer(url:  Bundle.main.url(forResource: "menuvideo2", withExtension: "mp4")!)
     
     func gotoMenu() {
         if let window = UIApplication.shared.windows.first {
@@ -28,9 +27,7 @@ struct FlashcardsScreenView: View {
     var body: some View {
             
         Group{
-            
-            VStack{
-                
+           
             Text(" ")
             Text("NJ Realtor Exam App Flashcards Video")
                 .bold()
@@ -39,20 +36,6 @@ struct FlashcardsScreenView: View {
                 .foregroundColor(.white)
             
             Spacer()
-            
-            // add video here
-            
-            VideoPlayer(player: AVPlayer (url: url),  // new
-                        videoOverlay:{
-                        Text("my new video")
-                    .frame(width: 161, height: 61)
-                    .background(Color.pink)
-            })
-            .scaledToFit()
-             
-            }
-                
-            // add video here
             
             // newer
             
