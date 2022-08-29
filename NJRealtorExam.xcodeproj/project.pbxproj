@@ -11,6 +11,11 @@
 		CE0C0F4128B5D930004D7AA8 /* FlashcardVideo.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0C0F4028B5D930004D7AA8 /* FlashcardVideo.swift */; };
 		CE0C0F4228BB1B3D004D7AA8 /* strokefore.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = CE0C0F3A28B29959004D7AA8 /* strokefore.mp4 */; };
 		CE0C0F4328BB1D46004D7AA8 /* menuvideo2.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = CE0C0F3728B29909004D7AA8 /* menuvideo2.mp4 */; };
+		CE0C0F4428BC5382004D7AA8 /* splashvideo1.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = CE0C0F3928B29932004D7AA8 /* splashvideo1.mp4 */; };
+		CE0C0F4528BC5392004D7AA8 /* settingsvideo5.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = CE0C0F3828B29925004D7AA8 /* settingsvideo5.mp4 */; };
+		CE0C0F4628BC53B6004D7AA8 /* lbvideo4.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = CE0C0F3628B298F4004D7AA8 /* lbvideo4.mp4 */; };
+		CE0C0F4728BC53C5004D7AA8 /* flashcardvideo3.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = CE0C0F3528B298C4004D7AA8 /* flashcardvideo3.mp4 */; };
+		CE0C0F4828BC53D1004D7AA8 /* devinfovideo6.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = CE0C0F3428B2987E004D7AA8 /* devinfovideo6.mp4 */; };
 		CE0CADDA26B6657B0044D010 /* njrealtorexam_12.json in Resources */ = {isa = PBXBuildFile; fileRef = CE0CADD926B6657B0044D010 /* njrealtorexam_12.json */; };
 		CE0CADDC26B6658E0044D010 /* njrealtorexam_21.json in Resources */ = {isa = PBXBuildFile; fileRef = CE0CADDB26B6658E0044D010 /* njrealtorexam_21.json */; };
 		CE0CADDE26B665A20044D010 /* njrealtorexam_32.json in Resources */ = {isa = PBXBuildFile; fileRef = CE0CADDD26B665A20044D010 /* njrealtorexam_32.json */; };
@@ -312,6 +317,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE0C0F4828BC53D1004D7AA8 /* devinfovideo6.mp4 in Resources */,
+				CE0C0F4728BC53C5004D7AA8 /* flashcardvideo3.mp4 in Resources */,
+				CE0C0F4628BC53B6004D7AA8 /* lbvideo4.mp4 in Resources */,
+				CE0C0F4528BC5392004D7AA8 /* settingsvideo5.mp4 in Resources */,
+				CE0C0F4428BC5382004D7AA8 /* splashvideo1.mp4 in Resources */,
 				CE0C0F4328BB1D46004D7AA8 /* menuvideo2.mp4 in Resources */,
 				CE0C0F4228BB1B3D004D7AA8 /* strokefore.mp4 in Resources */,
 				CE0CADDA26B6657B0044D010 /* njrealtorexam_12.json in Resources */,
