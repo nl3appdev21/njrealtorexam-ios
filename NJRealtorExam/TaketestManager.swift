@@ -44,7 +44,7 @@ public class TaketestManager {
     }
     
     func getCategory() -> String{
-        return currentItem!.category
+        return currentItem!.category.lowercased()
     }
     
     func getanswers() -> [String]{

@@ -85,7 +85,7 @@ struct Flashcards: View {
             .border(Color.black, width: 5)
 
             GeometryReader { geo in
-                Image(flashcardManager.getCategory().lowercased())
+                Image(flashcardManager.getCategory())
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .padding(21)

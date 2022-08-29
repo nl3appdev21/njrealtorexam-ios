@@ -35,7 +35,7 @@ public class FlashcardManager {
     
     func getCategory() -> String{
         // print(currentItem!.category)
-        return currentItem!.category
+        return currentItem!.category.lowercased()
     }
     
     func getanswers() -> [String]{
