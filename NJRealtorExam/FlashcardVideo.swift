@@ -31,11 +31,11 @@ struct HelpStrokeScreenView: View {
         let navBarApperance = UINavigationBarAppearance()
         navBarApperance.titleTextAttributes = [.foregroundColor: UIColor.systemBackground]
         navBarApperance.largeTitleTextAttributes = [.foregroundColor: UIColor.systemBackground]
-        // navBarApperance.shadowColor = .clear
-        // navBarApperance.backgroundColor = UIColor.black
-        // UINavigationBar.appearance().standardAppearance = navBarApperance
-        // UINavigationBar.appearance().compactAppearance = navBarApperance
-        // UINavigationBar.appearance().scrollEdgeAppearance = navBarApperance
+        //  navBarApperance.shadowColor = .clear
+        //  navBarApperance.backgroundColor = UIColor.black
+        //  UINavigationBar.appearance().standardAppearance = navBarApperance
+        //  UINavigationBar.appearance().compactAppearance = navBarApperance
+        //  UINavigationBar.appearance().scrollEdgeAppearance = navBarApperance
         UINavigationBar.appearance().tintColor = UIColor.systemPurple
     }
     
