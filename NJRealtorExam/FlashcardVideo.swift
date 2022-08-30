@@ -6,14 +6,6 @@
 //
 
 import Foundation
-
-//
-//  HelpStrokeScreen.swift
-//  Skill Help Stroke Screen
-//
-//  Created by user on 6/6/21.
-//
-
 import SwiftUI
 import AVKit
 
