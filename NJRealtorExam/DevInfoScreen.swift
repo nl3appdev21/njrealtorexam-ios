@@ -15,7 +15,7 @@ struct DevInfoScreenView: View {
     let greenBtn = Color(red: 76.0/255, green: 84.0/255, blue: 75.0/255)
     let blueBtn = Color(red: 53.0/255, green: 180.0/255, blue: 230.0/255)
     
-    let playerStroke = AVPlayer(url:  Bundle.main.url(forResource: "devinfovideo6", withExtension: "mp4")!)
+    let myPlayer = AVPlayer(url:  Bundle.main.url(forResource: "devinfovideo6", withExtension: "mp4")!)
     
     func gotoMenu() {
         if let window = UIApplication.shared.windows.first {
@@ -39,9 +39,9 @@ struct DevInfoScreenView: View {
             
             VStack{
                                 
-                AVPlayerControllerRepresented3(player: playerStroke)
+                AVPlayerControllerRepresented3(player: myPlayer)
                     .onAppear {
-                    playerStroke.play()
+                    myPlayer.play()
                     }
             }
                 

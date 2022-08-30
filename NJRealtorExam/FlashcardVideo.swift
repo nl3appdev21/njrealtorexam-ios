@@ -12,8 +12,8 @@ import AVKit
 struct HelpStrokeScreenView: View {
     
     let greenBtn = Color(red: 76.0/255, green: 84.0/255, blue: 75.0/255)
-    private let playerStroke = AVPlayer(url:  Bundle.main.url(forResource: "strokefore", withExtension: "mp4")!)
-    private let playerStroke2Way = AVPlayer(url:  Bundle.main.url(forResource: "strokebothways", withExtension: "mp4")!)
+    private let myPlayer = AVPlayer(url:  Bundle.main.url(forResource: "strokefore", withExtension: "mp4")!)
+    // private let playerStroke2Way = AVPlayer(url:  Bundle.main.url(forResource: "strokebothways", withExtension: "mp4")!)
     @State var isNavigationBarHidden: Bool = true
     @State var way1BtnVisible = false
     @State var way2BtnVisible = true
@@ -30,28 +30,35 @@ struct HelpStrokeScreenView: View {
             
         ZStack {
             Color.black
-                .ignoresSafeArea()
+            .ignoresSafeArea()
             
             VStack{
                 Text(" ")
+                
+                /*
+                 
                 Text("Practice Casting: Stroke 1-way")
                     .font(.title)
                     .foregroundColor(.white)
                     .bold()
                 Text(" ")
+                 
+                */
                 
                 VStack{
                                     
-                    AVPlayerControllerRepresented3(player: playerStroke)
+                    AVPlayerControllerRepresented3(player: myPlayer)
                         .onAppear {
-                        playerStroke.play()
+                            myPlayer.play()
                         }
                 }
                 
-            // Spacer()
-                
                 HStack {
                     
+                    Text(" skip21 ")
+                    
+                    /*
+                     
                     if way1BtnVisible{
                         Button(action: {  // 1-way button
                             print("1-way button")
@@ -69,7 +76,11 @@ struct HelpStrokeScreenView: View {
                             .foregroundColor(.white)
                         }
                     }
+                    
+                    */
                 
+                    /*
+                    
                     if repeatBtn {
                         Button(action: {  // repeat 1-way
                             print("1-way is on")
@@ -80,18 +91,22 @@ struct HelpStrokeScreenView: View {
                         }) {
                             Text("repeat 1-way")
                             .padding(10)
-                                .background(greenBtn)
+                            .background(greenBtn)
                             .foregroundColor(.white)
                         }
                     }
+                    
+                    */
                 }
                 
-                Text(" ")
+                //  ??  Text(" ")
                 
             }
         }
     }
 }
+
+//  ??
 
 struct AVPlayerControllerRepresented3 : UIViewControllerRepresentable {
     var player : AVPlayer
@@ -108,6 +123,11 @@ struct AVPlayerControllerRepresented3 : UIViewControllerRepresentable {
     }
 }
 
+//  ??
+
+
+/*
+ 
 struct AVPlayerControllerRepresented4 : UIViewControllerRepresentable {
     var player : AVPlayer
     
@@ -122,7 +142,14 @@ struct AVPlayerControllerRepresented4 : UIViewControllerRepresentable {
         
     }
 }
+ 
+*/
+ 
 
+/*
+ 
 func replay1WayVideo() {
     print("replay the 1-way video please")
 }
+ 
+*/
