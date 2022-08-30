@@ -18,6 +18,7 @@
 		CE0C0F4828BC53D1004D7AA8 /* devinfovideo6.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = CE0C0F3428B2987E004D7AA8 /* devinfovideo6.mp4 */; };
 		CE0C0F4E28BD873A004D7AA8 /* TakeTestScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0C0F4D28BD873A004D7AA8 /* TakeTestScreen.swift */; };
 		CE0C0F5028BD8766004D7AA8 /* DevInfoScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0C0F4F28BD8766004D7AA8 /* DevInfoScreen.swift */; };
+		CE0C0F5228BDD533004D7AA8 /* InstructionVideos.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0C0F5128BDD533004D7AA8 /* InstructionVideos.swift */; };
 		CE0CADDA26B6657B0044D010 /* njrealtorexam_12.json in Resources */ = {isa = PBXBuildFile; fileRef = CE0CADD926B6657B0044D010 /* njrealtorexam_12.json */; };
 		CE0CADDC26B6658E0044D010 /* njrealtorexam_21.json in Resources */ = {isa = PBXBuildFile; fileRef = CE0CADDB26B6658E0044D010 /* njrealtorexam_21.json */; };
 		CE0CADDE26B665A20044D010 /* njrealtorexam_32.json in Resources */ = {isa = PBXBuildFile; fileRef = CE0CADDD26B665A20044D010 /* njrealtorexam_32.json */; };
@@ -74,6 +75,7 @@
 		CE0C0F4028B5D930004D7AA8 /* FlashcardVideo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashcardVideo.swift; sourceTree = "<group>"; };
 		CE0C0F4D28BD873A004D7AA8 /* TakeTestScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TakeTestScreen.swift; sourceTree = "<group>"; };
 		CE0C0F4F28BD8766004D7AA8 /* DevInfoScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevInfoScreen.swift; sourceTree = "<group>"; };
+		CE0C0F5128BDD533004D7AA8 /* InstructionVideos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructionVideos.swift; sourceTree = "<group>"; };
 		CE0CADD926B6657B0044D010 /* njrealtorexam_12.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = njrealtorexam_12.json; sourceTree = "<group>"; };
 		CE0CADDB26B6658E0044D010 /* njrealtorexam_21.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = njrealtorexam_21.json; sourceTree = "<group>"; };
 		CE0CADDD26B665A20044D010 /* njrealtorexam_32.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = njrealtorexam_32.json; sourceTree = "<group>"; };
@@ -173,6 +175,7 @@
 				CE0C0F3C28B29D1A004D7AA8 /* FlashcardsScreen.swift */,
 				CE0C0F4F28BD8766004D7AA8 /* DevInfoScreen.swift */,
 				CE0C0F4028B5D930004D7AA8 /* FlashcardVideo.swift */,
+				CE0C0F5128BDD533004D7AA8 /* InstructionVideos.swift */,
 				CE97D7AF26ADE0DD008688E2 /* Assets.xcassets */,
 				CE97D7B426ADE0DD008688E2 /* Info.plist */,
 				CE97D7B126ADE0DD008688E2 /* Preview Content */,
@@ -362,6 +365,7 @@
 			files = (
 				CE97D7AE26ADE0DA008688E2 /* ContentView.swift in Sources */,
 				CE97D7E326AE0CDA008688E2 /* Leaderboard.swift in Sources */,
+				CE0C0F5228BDD533004D7AA8 /* InstructionVideos.swift in Sources */,
 				CE0C0F3D28B29D1A004D7AA8 /* FlashcardsScreen.swift in Sources */,
 				CE97D7E126AE0BAA008688E2 /* TakeTest.swift in Sources */,
 				CE0C0F4E28BD873A004D7AA8 /* TakeTestScreen.swift in Sources */,

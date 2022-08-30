@@ -1,15 +1,15 @@
 //
-//  FlashcardVideo.swift
+//  InstructionVideos.swift
 //  NJRealtorExam
 //
-//  Created by user on 8/23/22.
+//  Created by user on 8/30/22.
 //
 
 import Foundation
 import SwiftUI
 import AVKit
 
-struct FlashcardVideo: View {
+struct InstructionVideos: View {
     
     let greenBtn = Color(red: 76.0/255, green: 84.0/255, blue: 75.0/255)
      
@@ -19,7 +19,7 @@ struct FlashcardVideo: View {
 }
 
 // new avp1
-struct AVPlayerControllerRepresented0 : UIViewControllerRepresentable {
+struct AVPlayerControllerRepresented1 : UIViewControllerRepresentable {
     var player : AVPlayer
     
     func makeUIViewController(context: Context) -> AVPlayerViewController {
