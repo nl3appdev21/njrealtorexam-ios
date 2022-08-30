@@ -23,11 +23,6 @@ struct HelpStrokeScreenView: View {
         let navBarApperance = UINavigationBarAppearance()
         navBarApperance.titleTextAttributes = [.foregroundColor: UIColor.systemBackground]
         navBarApperance.largeTitleTextAttributes = [.foregroundColor: UIColor.systemBackground]
-        //  navBarApperance.shadowColor = .clear
-        //  navBarApperance.backgroundColor = UIColor.black
-        //  UINavigationBar.appearance().standardAppearance = navBarApperance
-        //  UINavigationBar.appearance().compactAppearance = navBarApperance
-        //  UINavigationBar.appearance().scrollEdgeAppearance = navBarApperance
         UINavigationBar.appearance().tintColor = UIColor.systemPurple
     }
     
@@ -44,27 +39,6 @@ struct HelpStrokeScreenView: View {
                     .foregroundColor(.white)
                     .bold()
                 Text(" ")
-            
-            VStack{
-                Text("1. Start your stroke slowly.")
-                    .foregroundColor(.white)
-                    .font(.system(size: 15))
-                Text(" ")
-                Text("2. Accelerate smoothly to a strong stop.")
-                    .foregroundColor(.white)
-                    .font(.system(size: 15))
-                Text(" ")
-                Text("3. Listen to the sound you made.")
-                    .foregroundColor(.white)
-                    .font(.system(size: 15))
-                Text(" ")
-                Text("4. Practice until you do it without thinking ")
-                    .foregroundColor(.white)
-                    .font(.system(size: 15))
-                Text(" and it sounds right every time. ")
-                    .foregroundColor(.white)
-                    .font(.system(size: 15))
-            }
                 
                 VStack{
                                     
@@ -73,16 +47,6 @@ struct HelpStrokeScreenView: View {
                         playerStroke.play()
                         }
                 }
-                
-                /*
-                VStack{
-                                    
-                    AVPlayerControllerRepresented4(player: playerStroke2Ways)
-                        .onAppear {
-                        playerStroke2Ways.play()
-                        }
-                }
-                */
                 
             // Spacer()
                 
@@ -106,7 +70,6 @@ struct HelpStrokeScreenView: View {
                         }
                     }
                 
-                    
                     if repeatBtn {
                         Button(action: {  // repeat 1-way
                             print("1-way is on")
