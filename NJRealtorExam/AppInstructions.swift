@@ -27,6 +27,20 @@ struct AppInstructions: View {
             window.makeKeyAndVisible()
         }
     }
+
+    func gotoDevInfoScreen() {
+        if let window = UIApplication.shared.windows.first {
+            window.rootViewController = UIHostingController(rootView: DevInfoScreenView())
+            window.makeKeyAndVisible()
+        }
+    }
+
+    func gotoTakeTestScreen() {
+        if let window = UIApplication.shared.windows.first {
+            window.rootViewController = UIHostingController(rootView: TakeTestScreenView())
+            window.makeKeyAndVisible()
+        }
+    }
     
     var body: some View {
         
@@ -44,9 +58,13 @@ struct AppInstructions: View {
                 .scaledToFit()
                 .frame(maxWidth: .infinity, alignment: .center)
             
-            Spacer()
+            //  Spacer()
                 
             VStack {
+                
+                Text("   ")
+                Text("   ")
+                Text("   ")
             
                 Button(action: {
                     gotoFlashcardsScreen()
@@ -60,6 +78,34 @@ struct AppInstructions: View {
                     .foregroundColor(.white)
                     .cornerRadius(10)
                 }).padding(8)
+                
+                Button(action: {
+                    gotoTakeTestScreen()
+                }, label: {
+                Text("TakeTest Video")
+                    .font(.system(size: 20))
+                    .bold()
+                    .padding(8)
+                    .frame(maxWidth: .infinity, alignment: .center)
+                    .background(blueBtn)
+                    .foregroundColor(.white)
+                    .cornerRadius(10)
+                }).padding(8)
+                
+                Button(action: {
+                    gotoDevInfoScreen()
+                }, label: {
+                Text("DevInfo Video")
+                    .font(.system(size: 20))
+                    .bold()
+                    .padding(8)
+                    .frame(maxWidth: .infinity, alignment: .center)
+                    .background(blueBtn)
+                    .foregroundColor(.white)
+                    .cornerRadius(10)
+                }).padding(8)
+                
+                Spacer()
                     
             }
                 
