@@ -40,7 +40,7 @@ struct TakeTestScreenView: View {
             
             VStack{
                                 
-                AVPlayerControllerRepresented3(player: myPlayer)
+                AVPlayerControllerRepresented1(player: myPlayer)
                     .onAppear {
                     myPlayer.play()
                     }

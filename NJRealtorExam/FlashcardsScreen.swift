@@ -38,8 +38,8 @@ struct FlashcardsScreenView: View {
             Spacer()
             
             VStack{
-                                
-                AVPlayerControllerRepresented3(player: myPlayer)
+                 
+                AVPlayerControllerRepresented1(player: myPlayer)
                     .onAppear {
                     myPlayer.play()
                     }
